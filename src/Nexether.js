@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './style.css'; // Import your CSS file
 import logo from './logo.png'; // Adjust the path as necessary
-import bgImage from './bg.jpeg'; // Adjust the path as necessary
 import product1 from './product1.png'; // Adjust the path as necessary
 import product2 from './product2.png'; // Adjust the path as necessary
 import product3 from './product3.png'; // Adjust the path as necessary
@@ -60,7 +59,7 @@ const NexEther = () => {
       </header>
 
       {/* Home Section */}
-      <section id="home" className="home-section" style={{ backgroundImage: `url(${bgImage})` }}>
+      <section id="home" className="home-section" style={{ backgroundColor: 'black' }}>
         <div className="hero-section">
           <div className="hero-content">
             <h1>WELCOME TO <br /> <span>NEXETHER</span></h1>
@@ -104,7 +103,7 @@ const NexEther = () => {
 
       {/* Products Section */}
       <section id="products">
-        <div className="product-section" style={{ backgroundImage: `url(${bgImage})` }}>
+        <div className="product-section" style={{ backgroundColor: 'black' }}>
           <main>
             <div className="product-container">
               <h1>OUR PRODUCTS</h1>
@@ -136,8 +135,9 @@ const NexEther = () => {
         </div>
       </section>
 
+      {/* Contact Section */}
       <section id="contact">
-        <div className="contact-section" style={{ backgroundImage: `url(${bgImage})` }}>
+        <div className="contact-section" style={{ backgroundColor: 'black' }}>
           <main>
             <div className="contact-container">
               <h1>CONTACT US</h1>
@@ -163,6 +163,22 @@ const NexEther = () => {
           </main>
         </div>
       </section>
+
+      {/* Footer Section */}
+      <footer className="footer">
+        <div className="footer-container">
+          <div className="footer-content">
+            <div className="social-links">
+              <a href="#" className="social-icon"><FontAwesomeIcon icon={faFacebookF} /></a>
+              <a href="#" className="social-icon"><FontAwesomeIcon icon={faTwitter} /></a>
+              <a href="#" className="social-icon"><FontAwesomeIcon icon={faInstagram} /></a>
+              <a href="#" className="social-icon"><FontAwesomeIcon icon={faGithub} /></a>
+              <a href="#" className="social-icon"><FontAwesomeIcon icon={faLinkedinIn} /></a>
+            </div>
+            <p>&copy; 2024 NexEther. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
 
       {/* Login Modal */}
       {showLoginModal && (

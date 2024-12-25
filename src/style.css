@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
 /*-------------------------------- General Reset ---------------------------------*/
+
 body, h1, p, a {
   margin: 0;
   padding: 0;
@@ -19,17 +21,17 @@ body {
 }
 
 section {
-    min-height: 100vh; /* Ensures each section takes at least the full viewport height */
+    min-height: 100vh;
   }
 
   .home-section, .about-section, .product-section, .contact-section, .end-section {
-    display: flex; /* Use flexbox for layout */
-    justify-content: center; /* Center content */
-    align-items: center; /* Center content vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .hidden {
-    display: none; /* Example of a class that hides sections */
+    display: none;
   }
 
 /* --------------------------------Home Screen --------------------*/
@@ -133,78 +135,37 @@ section {
 }
 /*----------------------loog----------------------*/
 
-.modal {
-    display: flex;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.7);
-}
-
-.modal-content {
-    background-color: transparent;
-    margin: 15% auto;
-    position: relative;
-    width: 60%;
-    margin-left: 350px;
-    border-radius: 10px;
-    padding: 20px;
-}
-
-.close {
-    color: #aaa;
-    position: absolute;
-    top: -120px; /* Adjust the top offset */
-    right: 140px; /* Adjust the right offset */
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 1001; /* Ensure it appears above other modal content */
-}
-
-.close:hover,
-.close:focus {
-    color: #fff; /* Brighten color on hover */
-    text-decoration: none;
-}
-
-
-.container {
-    background-color: transparent;
+.container{
+    background-color: #fff;
     border-radius: 30px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
     position: relative;
     overflow: hidden;
-    top: -150px;
     width: 768px;
     max-width: 100%;
-    min-height: 500px;
+    min-height: 480px;
 }
 
-.container p {
+.container p{
     font-size: 14px;
     line-height: 20px;
     letter-spacing: 0.3px;
     margin: 20px 0;
 }
 
-.container span {
+.container span{
     font-size: 12px;
 }
 
-.container a {
+.container a{
     color: #333;
     font-size: 13px;
     text-decoration: none;
     margin: 15px 0 10px;
 }
 
-.container button {
-    background-color: #d59835;
+.container button{
+    background-color: #0055ff;
     color: #fff;
     font-size: 12px;
     padding: 10px 45px;
@@ -217,14 +178,13 @@ section {
     cursor: pointer;
 }
 
-.container button.hidden {
+.container button.hidden{
     background-color: transparent;
     border-color: #fff;
 }
 
-.container form {
-    background-color: transparent;
-    backdrop-filter: blur(48px);
+.container form{
+    background-color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -233,65 +193,64 @@ section {
     height: 100%;
 }
 
-.container input {
-    background-color: #5f5d5d2e;
+.container input{
+    background-color: #eee;
     border: none;
     margin: 8px 0;
     padding: 10px 15px;
     font-size: 13px;
     border-radius: 8px;
     width: 100%;
-    color: rgba(255, 255, 255, 0.603);
     outline: none;
 }
 
-.form-container {
+.form-container{
     position: absolute;
     top: 0;
     height: 100%;
     transition: all 0.6s ease-in-out;
 }
 
-.sign-in {
+.sign-in{
     left: 0;
     width: 50%;
     z-index: 2;
 }
 
-.container.active .sign-in {
+.container.active .sign-in{
     transform: translateX(100%);
 }
 
-.sign-up {
+.sign-up{
     left: 0;
     width: 50%;
     opacity: 0;
     z-index: 1;
 }
 
-.container.active .sign-up {
+.container.active .sign-up{
     transform: translateX(100%);
     opacity: 1;
     z-index: 5;
     animation: move 0.6s;
 }
 
-@keyframes move {
-    0%, 49.99% {
+@keyframes move{
+    0%, 49.99%{
         opacity: 0;
         z-index: 1;
     }
-    50%, 100% {
+    50%, 100%{
         opacity: 1;
         z-index: 5;
     }
 }
 
-.social-icons {
+.social-icons{
     margin: 20px 0;
 }
 
-.social-icons a {
+.social-icons a{
     border: 1px solid #ccc;
     border-radius: 20%;
     display: inline-flex;
@@ -302,7 +261,7 @@ section {
     height: 40px;
 }
 
-.toggle-container {
+.toggle-container{
     position: absolute;
     top: 0;
     left: 50%;
@@ -314,16 +273,15 @@ section {
     z-index: 1000;
 }
 
-.container.active .toggle-container {
+.container.active .toggle-container{
     transform: translateX(-100%);
     border-radius: 0 150px 100px 0;
 }
 
-.toggle {
-    background-color: transparent;
-    backdrop-filter: blur(48px);
+.toggle{
+    background-color: #0055ff;
     height: 100%;
-    background: linear-gradient(288deg, #d59835, #043873);
+    background: linear-gradient(288deg, #0055ff, #043873);
     color: #fff;
     position: relative;
     left: -100%;
@@ -333,11 +291,11 @@ section {
     transition: all 0.6s ease-in-out;
 }
 
-.container.active .toggle {
+.container.active .toggle{
     transform: translateX(50%);
 }
 
-.toggle-panel {
+.toggle-panel{
     position: absolute;
     width: 50%;
     height: 100%;
@@ -352,20 +310,20 @@ section {
     transition: all 0.6s ease-in-out;
 }
 
-.toggle-left {
+.toggle-left{
     transform: translateX(-200%);
 }
 
-.container.active .toggle-left {
+.container.active .toggle-left{
     transform: translateX(0);
 }
 
-.toggle-right {
+.toggle-right{
     right: 0;
     transform: translateX(0);
 }
 
-.container.active .toggle-right {
+.container.active .toggle-right{
     transform: translateX(200%);
 }
 
@@ -451,7 +409,6 @@ section {
   transform: translateY(20px);
 }
 
-/* Keyframes for fade-in and slide-up effects */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -472,9 +429,8 @@ section {
   }
 }
 
-/* About section background */
 .about-section {
-  background-image: url('bg.jpeg');
+  background-color: #000;
   background-position: center;
   background-size: cover;
   color: #fff;
@@ -482,31 +438,29 @@ section {
   justify-items: center;
 }
 
-/* About container */
 .about-container {
   width: 1071px;
   height: 450px;
-  top: 140px;
+  top: 14px;
   gap: 0px;
   border-radius: 25px;
   padding: 50px;
   padding-bottom: 5px;
-  background: #70707080;
+  background: transparent;
   position: relative;
-  animation: slideUp 2.5s ease-in-out 2s; /* Slide-up effect with delay */
-  opacity: 1; /* Set to 1 after animation */
+  animation: slideUp 2.5s ease-in-out 2s;
+  opacity: 1;
 }
 
-/* About us section */
 .aboutus {
-  justify-content: center; /* Fade-in with delay */
-  opacity: 1; /* Set to 1 after animation */
+  justify-content: center;
+  opacity: 1;
 }
 
 .aboutus h1 {
   color: #DBCC99;
   font-size: 2em;
-  padding-left: 490px; /* Slide-up effect with delay */
+  padding-left: 490px;
 }
 
 .aboutus p {
@@ -514,278 +468,51 @@ section {
   padding: 20px;
   text-align: center;
   max-width: 1200px;
-  font-size: 1.2em; /* Fade-in with delay */
+  font-size: 1.2em;
 }
 
-/* Down section */
 .down {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 100px;
-  padding: 60px;/* Fade-in effect with delay */
-  opacity: 1; /* Set to 1 after animation */
+  padding: 60px;
+  opacity: 1;
 }
 
-/* Who and choose sections */
 .who,
 .choose {
-  text-align: left; /* Slide-up effect with delay */
-  opacity: 1; /* Set to 1 after animation */
+  text-align: left;
+  opacity: 1;
 }
 
 .who h1,
 .choose h1 {
   color: #DBCC99;
-  font-size: 2em; /* Fade-in effect with delay */
+  font-size: 2em;
 }
 
 .who p,
 .choose p {
   color: #ffffff;
   padding-top: 20px;
-  font-size: 1.2em; /* Fade-in effect with delay */
+  font-size: 1.2em;
 }
 
-/* Hover effect for sections */
 .who:hover h1,
 .choose:hover h1 {
-  color: #f0e68c; /* Light yellow on hover */
+  color: #f0e68c;
 }
 
 .who:hover p,
 .choose:hover p {
-  color: #d3d3d3; /* Light gray on hover */
+  color: #d3d3d3;
 }
-
-/*-----------------------sign up--------------------*/
-
-
-.login-box {
-  width: auto;
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-}
-
-.login-box h2 {
-  margin-bottom: 20px;
-  font-size: 28px;
-  text-align: center;
-  font-weight: bold;
-  color: #e6af4b;
-}
-
-.login-box p {
-  text-align: center;
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
-  flex-direction: column;
-}
-
-.login-box input {
-  width: 100%;
-  padding: 20px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 20px;
-  font-size: 16px;
-  background: linear-gradient(to right, #333, #888383);
-  transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s, background 0.3s; 
-}
-
-.login-box input:focus {
-  border-color: #d59835;
-  box-shadow: 0 0 10px rgba(213, 152, 53, 0.5);
-  transform: scale(1.05);
-  background: linear-gradient(to right, #ccc, #333);
-  color: #333;
-}
-
-.login-box input:hover {
-  border-color: #888383;
-  transform: scale(1.02);
-   background: linear-gradient(to right, #ccc, #333);
-}
-
-
-.login-box button {
-  width: 20%;
-  margin-left: 200px;
-  padding: 10px;
-  background: radial-gradient(circle,#767272, #d59835);
-  border: none;
-  border-radius: 20px;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.login-box button:hover {
-  background: radial-gradient(circle,#d59835, #000);}
-
-.login-box .forgot-link,
-.login-box .create-link {
-  font-size: 14px;
-  text-decoration: none;
-  color: #fff;
-  display: block;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-.login-box .forgot-link:hover,
-.login-box .create-link:hover {
-  color: white;
-}
-
-.register-container{
-  width: 1071px;
-  height: 450px;
-  top: 140px;
-  gap: 0px;
-  border-radius: 25px 25px 25px 25px;
-  opacity: 0px;
-  padding: 50px;
-  padding-bottom: 5px;
-  background: transparent;
-  position: relative;
-}
-
-.register-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: -40px;
-  width: 100%;
-}
-
-
-.register-box h1{
-  color: #DBCC99;
-  padding: 20px;
-}
-
-.register-box input {
-  border: 1px solid #ccc;
-  border-radius: 20px;
-  font-size: 14px;
-  width: 100%;
-  padding: 15px;
-  margin: 10px 0;
-  font-size: 14px;
-  background: linear-gradient(to right, #333, #888383);
-  transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s, background 0.3s;
-}
-
-.register-box input:focus {
-  border-color: #d59835;
-  box-shadow: 0 0 10px rgba(213, 152, 53, 0.5);
-  transform: scale(1.07);
-  background: linear-gradient(to right, #ccc, #333);
-  color: #333;
-}
-
-.register-box input:hover {
-  border-color: #888383;
-  transform: scale(1.07);
-  background: linear-gradient(to right, #ccc, #333);
-}
-
-.register-box button {
-  background: linear-gradient(#888383, #d59835);
-  color: #333;
-  font-size: 16px;
-  padding: 10px;
-  margin-left: 160px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.register-box button:hover {
-  background: radial-gradient(#d59835, #5f5d5d);
-}
-
-.register-box a {
-  color: #DBCC99;
-  text-align: center;
-  display: block;
-  margin-top: 10px;
-}
-
-.register-box p{
-  font-size: 1.2em;
-  text-align: center;
-}
-
-
-
-.password-container {
-  position: relative;
-}
-
-.password-container input {
-  width: calc(100% - 20px);
-  padding: 15px;
-  padding-right: 30px;
-  border: 1px solid #ccc;
-  border-radius: 20px;
-  font-size: 14px;
-  transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s, background 0.3s; /* Smooth transitions */
-}
-
-
-.password-container input:focus {
-  border-color: #d59835;
-  box-shadow: 0 0 10px rgba(213, 152, 53, 0.5);
-  transform: scale(1.07);
-  background: linear-gradient(to right, #ccc, #333);
-  color: #333;
-}
-
-.password-container input:hover {
-  border-color: #888383;
-  transform: scale(1.07);
-  background: linear-gradient(to right, #ccc, #333);
-}
-
-.toggle-visibility {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-  color: #aaa;
-}
-
-.login-link {
-  margin-top: 10px;
-  font-size: 14px;
-}
-
-.login-link a {
-  color: #e8c55c;
-  text-decoration: none;
-}
-
-.login-link a:hover {
-  text-decoration: underline;
-}
-
 
 /*--------------------------------------Products Section --------------------------------*/
 
 
 .product-section {
-  background-image: url('bg.jpeg');
+  background-color: #000;
   background-position: center;
   background-size: cover;
   color: #fff;
@@ -800,7 +527,7 @@ section {
   height: 450px;
   top: 40px;
   border-radius: 25px;
-  background: rgba(112, 112, 112, 0.5); /* Semi-transparent */
+  background: rgba(112, 112, 112, 0.5);
   position: relative;
   padding: 50px;
   text-align: center;
@@ -992,7 +719,7 @@ section {
 /*-------------Contact Us ----------------------*/
 
 .contact-section {
-  background-image: url('bg.jpeg');
+  background-color: #000;
   background-position: center;
   background-size: cover;
   color: #fff;
@@ -1002,16 +729,23 @@ section {
   align-items: center;
 }
 
-.contact-container {
-  width: 1071px;
-  height: 450px;
-  top: 40px;
-  border-radius: 25px;
-  background: rgba(112, 112, 112, 0.5);
-  position: relative;
-  padding: 50px;
-  text-align: center;
-}
+  .contact-container {
+    width: 1071px;
+    height: 450px;
+    top: 40px;
+    border-radius: 25px;
+    background: transparent;
+    border-color: #d59835;
+    border-style: solid;
+    border-width: 5px;
+    border-left: none;
+    border-top: none;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    position: relative;
+    padding: 50px;
+    text-align: center;
+  }
 
 .contact-container h1{
   color: #DBCC99;
@@ -1094,7 +828,7 @@ section {
 
 
 .end-section {
-  background-image: url('bg.jpeg');
+  background-color: #000;
   background-position: center;
   background-size: cover;
   color: #fff;
@@ -1196,7 +930,7 @@ section {
   display: grid;
   background: linear-gradient(to right, #685000, #ffffff); 
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; 
+  -webkit-text-fill-color: transparent;
   text-decoration: none;
   padding: 10px;
 }
