@@ -22,6 +22,25 @@ const NexEther = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
   };
 
+  const getTransformStyle = (index) => {
+    const position = (index - currentIndex + images.length) % images.length;
+    if (position === 0) return 'translateX(0) scale(1.2)';
+    if (position === 1 || position === -images.length + 1) return 'translateX(120%) scale(1)';
+    if (position === -1 || position === images.length - 1) return 'translateX(-120%) scale(1)';
+    return 'translateX(200%)';
+  };
+
+  const getOpacity = (index) => {
+    const position = (index - currentIndex + images.length) % images.length;
+    return position === 0 ? 1 : 0.6;
+  };
+  
+  const getZIndex = (index) => {
+    const position = (index - currentIndex + images.length) % images.length;
+    return position === 0 ? 1 : 0;
+  };
+  
+
   useEffect(() => {
     const interval = setInterval(nextImage, 3500);
     return () => clearInterval(interval);
@@ -115,8 +134,8 @@ const NexEther = () => {
                       <div
                         className="image-container"
                         key={`image-${index}`}
-                        style={{ opacity: currentIndex === index ? 1 : 0.6 }}
-                      >
+                        style={{transform: getTransformStyle(index),opacity: getOpacity(index),zIndex: getZIndex(index),}}
+                          >
                         <img src={image} alt={`Product ${index + 1}`} />
                         <div className="layer">
                           <h2>{`Product ${index + 1}`}</h2>
