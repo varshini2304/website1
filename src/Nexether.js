@@ -59,7 +59,7 @@ const NexEther = () => {
       </header>
 
       {/* Home Section */}
-      <section id="home" className="home-section" style={{ backgroundColor: 'black' }}>
+      <section id="home" className="home-section">
         <div className="hero-section">
           <div className="hero-content">
             <h1>WELCOME TO <br /> <span>NEXETHER</span></h1>
@@ -103,7 +103,7 @@ const NexEther = () => {
 
       {/* Products Section */}
       <section id="products">
-        <div className="product-section" style={{ backgroundColor: 'black' }}>
+        <div className="product-section">
           <main>
             <div className="product-container">
               <h1>OUR PRODUCTS</h1>
@@ -137,7 +137,7 @@ const NexEther = () => {
 
       {/* Contact Section */}
       <section id="contact">
-        <div className="contact-section" style={{ backgroundColor: 'black' }}>
+        <div className="contact-section">
           <main>
             <div className="contact-container">
               <h1>CONTACT US</h1>
@@ -164,44 +164,62 @@ const NexEther = () => {
         </div>
       </section>
 
-      {/* Footer Section */}
-      <footer className="footer">
-        <div className="footer-container">
-          <div className="footer-content">
-            <div className="social-links">
-              <a href="#" className="social-icon"><FontAwesomeIcon icon={faFacebookF} /></a>
-              <a href="#" className="social-icon"><FontAwesomeIcon icon={faTwitter} /></a>
-              <a href="#" className="social-icon"><FontAwesomeIcon icon={faInstagram} /></a>
-              <a href="#" className="social-icon"><FontAwesomeIcon icon={faGithub} /></a>
-              <a href="#" className="social-icon"><FontAwesomeIcon icon={faLinkedinIn} /></a>
-            </div>
-            <p>&copy; 2024 NexEther. All rights reserved.</p>
-          </div>
+      <footer>
+  <main>
+    <div className="end-container">
+      <div className="sort">
+        <div className="first">
+          <img src={logo} alt="NexEther Logo" href="#home" className="logo-img click" />
         </div>
+        <div className="second">
+          <h1>Join our mailing list</h1>
+          <p>Be the first to know about exclusive offers, and more!</p>
+          <form action="subscribe">
+            <input type="email" placeholder="Email" />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+        <div className="third">
+          <h1>Our Products</h1>
+          <a href="product1.html" target="_blank">Arogya Locker</a>
+          <a href="product2.html" target="_blank">Decentralized Browser</a>
+          <a href="product3.html" target="_blank">Social Media</a>
+        </div>
+        <div className="fourth">
+          <h1>Follow Us</h1>
+          <a href="#"><FontAwesomeIcon icon={faTwitter} /></a>
+          <a href="#"><FontAwesomeIcon icon={faFacebookF} /></a>
+          <a href="#"><FontAwesomeIcon icon={faInstagram} /></a>
+          <a href="#"><FontAwesomeIcon icon={faLinkedin} /></a>
+        </div>
+      </div>
+    </div>
+  </main>
       </footer>
 
       {/* Login Modal */}
       {showLoginModal && (
         <div className="modal">
           <div className="modal-content">
-            <span className="close" onClick={handleCloseModal}>&#x2715;</span>
-            <div className="container" id="container">
-              <div className={`form-container sign-in ${!isSignUp ? 'active' : ''}`}>
-                <form onSubmit={(e) => { e.preventDefault(); alert('Logged In!'); }}>
-                  <h1>Sign In</h1>
-                  <div className="social-icons">
-                    <a href="#"><FontAwesomeIcon icon={faGooglePlusG} /></a>
-                    <a href="#"><FontAwesomeIcon icon={faFacebookF} /></a>
-                    <a href="#"><FontAwesomeIcon icon={faGithub} /></a>
-                    <a href="#"><FontAwesomeIcon icon={faLinkedinIn} /></a>
-                  </div>
-                  <span>or use your email password</span>
-                  <input type="email" placeholder="Email" required />
-                  <input type="password" placeholder="Password" required />
-                  <a className="forgot-link" href="#">Forget Your Password?</a>
-                  <button type="submit">Sign In</button>
-                </form>
-              </div>
+          <span className="close" onClick={handleCloseModal}>&#x2715;</span>
+            <div className={`container ${isSignUp ? 'active' : ''}`} id="container">
+            {!isSignUp && (
+                <div className="form-container sign-in active">                  <form onSubmit={(e) => { e.preventDefault(); alert('Logged In!'); }}>
+                    <h1>Sign In</h1>
+                    <div className="social-icons">
+                      <a href="#"><FontAwesomeIcon icon={faGooglePlusG} /></a>
+                      <a href="#"><FontAwesomeIcon icon={faFacebookF} /></a>
+                      <a href="#"><FontAwesomeIcon icon={faGithub} /></a>
+                      <a href="#"><FontAwesomeIcon icon={faLinkedinIn} /></a>
+                    </div>
+                    <span>or use your email password</span>
+                    <input type="email" placeholder="Email" required />
+                    <input type="password" placeholder="Password" required />
+                    <a className="forgot-link" href="#">Forget Your Password?</a>
+                    <button type="submit">Sign In</button>
+                  </form>
+                </div>
+              )}
               <div className={`form-container sign-up ${isSignUp ? 'active' : ''}`}>
                 <form onSubmit={(e) => { e.preventDefault(); alert('Signed Up!'); }}>
                   <h1>Sign Up</h1>
@@ -234,3 +252,4 @@ const NexEther = () => {
 };
 
 export default NexEther;
+

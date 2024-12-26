@@ -3,6 +3,16 @@
 
 /*-------------------------------- General Reset ---------------------------------*/
 
+body {
+  font-family: Arial, sans-serif;
+  color: #fff;
+  background-image: url('bg.jpeg');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
+}
+
 body, h1, p, a {
   margin: 0;
   padding: 0;
@@ -14,12 +24,6 @@ html{
 }
 
 
-body {
-  font-family: Arial, sans-serif;
-  color: #fff;
-  margin: 0;
-}
-
 section {
     min-height: 100vh;
   }
@@ -30,16 +34,10 @@ section {
     align-items: center;
   }
 
-  .hidden {
-    display: none;
-  }
 
 /* --------------------------------Home Screen --------------------*/
 
 .home-section{
-  background-color: #000;
-  background-position: center;
-  background-size: cover;
   color: #fff;
   min-height: 100vh;
 }
@@ -135,13 +133,40 @@ section {
 }
 /*----------------------loog----------------------*/
 
+.modal {
+  display: flex; /* Use flexbox to center the modal */
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+}
+
+.modal-content {
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 950px;
+  width: 100%;
+}
+
+.modal-content .close{
+  left: 200px;
+  margin-left: 500px;
+  cursor: pointer;
+}
+
 .container{
-    background-color: #fff;
+    backdrop-filter: blur(25px);
     border-radius: 30px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 5px 15px rgba(117, 114, 114, 0.603);
     position: relative;
     overflow: hidden;
-    width: 768px;
+    width: 808px;
+    left: 100px;
     max-width: 100%;
     min-height: 480px;
 }
@@ -165,12 +190,15 @@ section {
 }
 
 .container button{
-    background-color: #0055ff;
+    background: transparent;
     color: #fff;
     font-size: 12px;
     padding: 10px 45px;
-    border: 1px solid transparent;
-    border-radius: 8px;
+    border-bottom: 2px solid #767272;
+    border-right: 2px solid #767272;
+    border-top: none;
+    border-left: none;
+    border-radius:10px;
     font-weight: 600;
     letter-spacing: 0.5px;
     text-transform: uppercase;
@@ -178,13 +206,19 @@ section {
     cursor: pointer;
 }
 
-.container button.hidden{
-    background-color: transparent;
-    border-color: #fff;
+.container .hidden:hover{
+  background: white;
+  color: black;
+  transform-box: 10px
+}
+
+
+.container button:hover{
+    background: linear-gradient(#0a0a0a, #767272);
 }
 
 .container form{
-    background-color: #fff;
+    backdrop-filter: blur(45px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -194,10 +228,15 @@ section {
 }
 
 .container input{
-    background-color: #eee;
-    border: none;
+    background-color: transparent;
+    border-bottom: 5 solid;
+    border-top: none;
+    border-right: none;
+    border-left: none;
     margin: 8px 0;
     padding: 10px 15px;
+    color: #fff;
+    font-weight: 100;
     font-size: 13px;
     border-radius: 8px;
     width: 100%;
@@ -209,6 +248,10 @@ section {
     top: 0;
     height: 100%;
     transition: all 0.6s ease-in-out;
+}
+
+.container a{
+    color: #ccc;
 }
 
 .sign-in{
@@ -253,6 +296,7 @@ section {
 .social-icons a{
     border: 1px solid #ccc;
     border-radius: 20%;
+    color: #ccc;
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -279,9 +323,8 @@ section {
 }
 
 .toggle{
-    background-color: #0055ff;
     height: 100%;
-    background: linear-gradient(288deg, #0055ff, #043873);
+    background: linear-gradient(#533b15, #eaad4b);
     color: #fff;
     position: relative;
     left: -100%;
@@ -295,20 +338,6 @@ section {
     transform: translateX(50%);
 }
 
-.toggle-panel{
-    position: absolute;
-    width: 50%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0 30px;
-    text-align: center;
-    top: 0;
-    transform: translateX(0);
-    transition: all 0.6s ease-in-out;
-}
 
 .toggle-left{
     transform: translateX(-200%);
@@ -318,14 +347,68 @@ section {
     transform: translateX(0);
 }
 
-.toggle-right{
-    right: 0;
-    transform: translateX(0);
+.toggle-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(0);
+  transition: all 0.6s ease-in-out;
 }
 
-.container.active .toggle-right{
-    transform: translateX(200%);
+.toggle-panel{
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 30 30px;
+  text-align: center;
+  top: 0;
+  transform: translateX(0);
+  transition: all 0.6s ease-in-out;
 }
+
+.toggle-right button {
+  background-color: #fff;
+  color: #333;
+  position: absolute;
+  display: flex;
+  top: 280px;
+  flex-direction: column;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 45px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.toggle-left button {
+  background-color: #fff;
+  color: #333;
+  position: absolute;
+  display: flex;
+  top: 280px;
+  flex-direction: column;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 45px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
 
 /*----------------------entry page----------------------*/
 
@@ -430,9 +513,6 @@ section {
 }
 
 .about-section {
-  background-color: #000;
-  background-position: center;
-  background-size: cover;
   color: #fff;
   min-height: 100vh;
   justify-items: center;
@@ -512,9 +592,6 @@ section {
 
 
 .product-section {
-  background-color: #000;
-  background-position: center;
-  background-size: cover;
   color: #fff;
   min-height: 100vh;
   display: flex;
@@ -719,9 +796,6 @@ section {
 /*-------------Contact Us ----------------------*/
 
 .contact-section {
-  background-color: #000;
-  background-position: center;
-  background-size: cover;
   color: #fff;
   min-height: 100vh;
   display: flex;
@@ -828,9 +902,6 @@ section {
 
 
 .end-section {
-  background-color: #000;
-  background-position: center;
-  background-size: cover;
   color: #fff;
   min-height: 100vh;
   display: flex;
@@ -839,7 +910,7 @@ section {
 }
 
 .end-container {
-  width: 1400px;
+  width: 1580px;
   height: 200px;
   bottom: -200px;
   background: rgba(112, 112, 112, 0.5); /* Semi-transparent */
@@ -853,15 +924,15 @@ section {
 
 .sort{
   display: flex;
-  gap: 140px;
+  gap: 180px;
   padding: 40px;
 }
 
 .first img{
-  height: 250px;
+  height: 150px;
   margin-left: -20px;
-  width: 300px;
-  margin-top: -50px;
+  width: 150px;
+  margin-top: -20px;
 }
 
 .second{
@@ -926,11 +997,9 @@ section {
 }
 
 .fourth a {
-  font-size: 35px;
+  font-size: 25px;
   display: grid;
-  background: linear-gradient(to right, #685000, #ffffff); 
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #DBCC99;
   text-decoration: none;
-  padding: 10px;
+  padding: 5px;
 }
