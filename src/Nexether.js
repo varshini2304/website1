@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './style.css'; // Import your CSS file
+import product1 from './product1.png';
+import product2 from './product2.png';
+import product3 from './product3.png';
 import logo from './logo.png'; // Adjust the path as necessary
-import product1 from './product1.png'; // Adjust the path as necessary
-import product2 from './product2.png'; // Adjust the path as necessary
-import product3 from './product3.png'; // Adjust the path as necessary
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Import FontAwesomeIcon
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'; // Import icons
 import { faLinkedin, faInstagram, faTwitter, faGooglePlusG, faFacebookF, faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
@@ -12,21 +12,28 @@ const NexEther = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showLoginModal, setShowLoginModal] = useState(false); // State to toggle login modal
   const [isSignUp, setIsSignUp] = useState(false); // State to toggle between sign up and sign in
-  const images = [product1, product2, product3]; // Add your product images here
+  const [popupVisible, setPopupVisible] = useState(false);
+  const images = [
+    { src: product1, name: 'Decentralized Browser', description: 'The Decentralized Browser by NexEther redefines internet browsing with enhanced privacy, security, and freedom. Built on blockchain technology, this innovative browser eliminates the need for central servers, ensuring that user data remains private and untraceable. It provides a seamless browsing experience while supporting peer-to-peer networks, enabling censorship-resistant access to information.' },
+    { src: product2, name: 'Social Media Application', description: 'Our Decentralized Social Media Application redefines online interactions by offering a platform that prioritizes user autonomy  data privacy, and transparency. Built on blockchain technology, this application ensures that users retain full ownership of their content and data, eliminating reliance on centralized servers prone to breaches and censorship. By integrating peer-to-peer networking, it promotes freedom of expression and a fair content distribution model' },
+    { src: product3, name: 'Arogya Locker', description: 'Arogya Locker is an innovative product designed to revolutionize healthcare data management  It serves as a secure, decentralized platform for storing and sharing medical records. Leveraging blockchain technology, it ensures data integrity, privacy, and transparency, enabling users to access and control their health information seamlessly. Arogya Locker empowers individuals while fostering a more efficient and connected healthcare ecosystem.' },
+  ];
+  const imagesd = [product1, product2, product3];
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
-  const nextImage = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  const nextImaged = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % imagesd.length);
   };
 
-  const prevImage = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+  const prevImaged = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + imagesd.length) % imagesd.length);
   };
 
-  const getTransformStyle = (index) => {
-    const position = (index - currentIndex + images.length) % images.length;
+  const getTransformStyled = (index) => {
+    const position = (index - currentIndex + imagesd.length) % imagesd.length;
     if (position === 0) return 'translateX(0) scale(1.2)';
-    if (position === 1 || position === -images.length + 1) return 'translateX(120%) scale(1)';
-    if (position === -1 || position === images.length - 1) return 'translateX(-120%) scale(1)';
+    if (position === 1 || position === -imagesd.length + 1) return 'translateX(120%) scale(1)';
+    if (position === -1 || position === imagesd.length - 1) return 'translateX(-120%) scale(1)';
     return 'translateX(200%)';
   };
 
@@ -34,15 +41,24 @@ const NexEther = () => {
     const position = (index - currentIndex + images.length) % images.length;
     return position === 0 ? 1 : 0.6;
   };
-  
+
   const getZIndex = (index) => {
     const position = (index - currentIndex + images.length) % images.length;
     return position === 0 ? 1 : 0;
   };
-  
+
+  const showPopup = (product) => {
+    setSelectedProduct(product);
+    setPopupVisible(true);
+  };
+
+    const closePopup = () => {
+      setPopupVisible(false);
+      setSelectedProduct(null);
+    };
 
   useEffect(() => {
-    const interval = setInterval(nextImage, 3500);
+    const interval = setInterval(nextImaged, 3500);
     return () => clearInterval(interval);
   }, []);
 
@@ -128,30 +144,45 @@ const NexEther = () => {
               <h1>OUR PRODUCTS</h1>
               <div className="align">
                 <div className="image-slider">
-                  <button className="slider-btn left-btn" onClick={prevImage}>&#10094;</button>
+                  <button className="slider-btn left-btn" onClick={prevImaged}>&#10094;</button>
                   <div className="slider-images">
-                    {images.map((image, index) => (
-                      <div
-                        className="image-container"
-                        key={`image-${index}`}
-                        style={{transform: getTransformStyle(index),opacity: getOpacity(index),zIndex: getZIndex(index),}}
-                          >
-                        <img src={image} alt={`Product ${index + 1}`} />
-                        <div className="layer">
-                          <h2>{`Product ${index + 1}`}</h2>
-                          <a href={`product${index + 1}.html`} target="_blank" rel="noopener noreferrer">
-                            <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-                          </a>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                  <button className="slider-btn right-btn" onClick={nextImage}>&#10095;</button>
+                    {images.map((product, index) => (
+                    <div
+                    className="image-container"
+                    key={`image-${index}`}
+                    style={{
+                    transform: getTransformStyled(index),
+                    opacity: getOpacity(index),
+                    zIndex: getZIndex(index),
+                }}
+                onClick={() => showPopup(product)} // Open popup with product details
+                >
+                <img src={product.src} alt={`Product ${index + 1}`} />
+                <div className="layer">
+                <h2>{product.name}</h2>
+                <i onClick={() => showPopup(product)}>
+                <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                </i>
+              </div>
+            </div>
+          ))}
+        </div>
+                  <button className="slider-btn right-btn" onClick={nextImaged}>&#10095;</button>
                 </div>
               </div>
             </div>
           </main>
         </div>
+        {popupVisible && (
+        <div className="popup-overlay" onClick={closePopup}>
+          <div className="popup-content" onClick={(e) => e.stopPropagation()}>
+          <button className="close-btn" onClick={closePopup}>&#10005;</button>
+          <img src={selectedProduct.src} alt={selectedProduct.name} />
+          <h2>{selectedProduct.name}</h2>
+          <p>{selectedProduct.description}</p>
+        </div>
+    </div>
+      )}
       </section>
 
       {/* Contact Section */}
@@ -223,7 +254,8 @@ const NexEther = () => {
           <span className="close" onClick={handleCloseModal}>&#x2715;</span>
             <div className={`container ${isSignUp ? 'active' : ''}`} id="container">
             {!isSignUp && (
-                <div className="form-container sign-in active">                  <form onSubmit={(e) => { e.preventDefault(); alert('Logged In!'); }}>
+                <div className="form-container sign-in active">
+                <form onSubmit={(e) => { e.preventDefault(); alert('Logged In!'); }}>
                     <h1>Sign In</h1>
                     <div className="social-icons">
                       <a href="#"><FontAwesomeIcon icon={faGooglePlusG} /></a>
@@ -269,6 +301,5 @@ const NexEther = () => {
     </div>
   );
 };
-
 export default NexEther;
 
