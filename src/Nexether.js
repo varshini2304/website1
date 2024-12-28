@@ -188,21 +188,20 @@ const NexEther = () => {
       </div>
     </main>
   </div>
-  {popupVisible && selectedProduct && (
-  <div className="popup-overlay" onClick={closePopup}>
-    <div className="popup-content" onClick={(e) => e.stopPropagation()}>
-      <button className="close-btn" onClick={closePopup}>&#10005;</button>
-      <button className="slider-btn left-btn" onClick={prevPopupImage}>&#10094;</button>
-      <div className="popup-image-content">
-        <img src={selectedProduct.src} alt={selectedProduct.name} />
-        <h2>{selectedProduct.name}</h2>
-        <p>{selectedProduct.description}</p>
+  {popupVisible && (
+    <div className="popup-overlay" onClick={closePopup}>
+      <div className="popup-content" onClick={(e) => e.stopPropagation()}>
+        <button className="close-btn" onClick={closePopup}>&#10005;</button>
+        <button className="slider-btn left-btn" onClick={prevPopupImage}>&#10094;</button>
+        <div className="popup-image-content">
+          <img src={selectedProduct.src} alt={selectedProduct.name} />
+          <h2>{selectedProduct.name}</h2>
+          <p>{selectedProduct.description}</p>
+        </div>
+        <button className="slider-btn right-btn" onClick={nextPopupImage}>&#10095;</button>
       </div>
-      <button className="slider-btn right-btn" onClick={nextPopupImage}>&#10095;</button>
     </div>
-  </div>
-)}
-
+  )}
 </section>
 
       {/* Contact Section */}
@@ -256,11 +255,11 @@ const NexEther = () => {
           <a href="product3.html" target="_blank">Social Media</a>
         </div>
         <div className="fourth">
-          <h1>Follow Us</h1>
-          <a href="#"><FontAwesomeIcon icon={faTwitter} /></a>
-          <a href="#"><FontAwesomeIcon icon={faFacebookF} /></a>
-          <a href="#"><FontAwesomeIcon icon={faInstagram} /></a>
-          <a href="#"><FontAwesomeIcon icon={faLinkedin} /></a>
+        <h1>Follow Us</h1>
+          <a href="#" className="social-icon"><FontAwesomeIcon icon={faTwitter} /></a>
+          <a href="#" className="social-icon"><FontAwesomeIcon icon={faFacebookF} /></a>
+          <a href="#" className="social-icon"><FontAwesomeIcon icon={faInstagram} /></a>
+          <a href="#" className="social-icon"><FontAwesomeIcon icon={faLinkedin} /></a>
         </div>
       </div>
     </div>
