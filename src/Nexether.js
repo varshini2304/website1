@@ -29,6 +29,21 @@ const NexEther = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + imagesd.length) % imagesd.length);
   };
 
+  const prevPopupImage = () => {
+    if (!selectedProduct) return;
+    const currentIndex = images.findIndex((product) => product.name === selectedProduct.name);
+    const prevIndex = (currentIndex - 1 + images.length) % images.length; // Handle wrap-around
+    setSelectedProduct(images[prevIndex]);
+  };
+
+  const nextPopupImage = () => {
+    if (!selectedProduct) return;
+    const currentIndex = images.findIndex((product) => product.name === selectedProduct.name);
+    const nextIndex = (currentIndex + 1) % images.length; // Handle wrap-around
+    setSelectedProduct(images[nextIndex]);
+  };
+
+
   const getTransformStyled = (index) => {
     const position = (index - currentIndex + imagesd.length) % imagesd.length;
     if (position === 0) return 'translateX(0) scale(1.2)';
@@ -135,55 +150,60 @@ const NexEther = () => {
           </main>
         </div>
       </section>
-
-      {/* Products Section */}
-      <section id="products">
-        <div className="product-section">
-          <main>
-            <div className="product-container">
-              <h1>OUR PRODUCTS</h1>
-              <div className="align">
-                <div className="image-slider">
-                  <button className="slider-btn left-btn" onClick={prevImaged}>&#10094;</button>
-                  <div className="slider-images">
-                    {images.map((product, index) => (
-                    <div
-                    className="image-container"
-                    key={`image-${index}`}
-                    style={{
+{/* Products Section */}
+{/* Products Section */}
+<section id="products">
+  <div className="product-section">
+    <main>
+      <div className="product-container">
+        <h1>OUR PRODUCTS</h1>
+        <div className="align">
+          <div className="image-slider">
+            <button className="slider-btn left-btn" onClick={prevImaged}>&#10094;</button>
+            <div className="slider-images">
+              {images.map((product, index) => (
+                <div
+                  className="image-container"
+                  key={`image-${index}`}
+                  style={{
                     transform: getTransformStyled(index),
                     opacity: getOpacity(index),
                     zIndex: getZIndex(index),
-                }}
-                onClick={() => showPopup(product)} // Open popup with product details
+                  }}
+                  onClick={() => showPopup(product)} // Open popup with product details
                 >
-                <img src={product.src} alt={`Product ${index + 1}`} />
-                <div className="layer">
-                <h2>{product.name}</h2>
-                <i onClick={() => showPopup(product)}>
-                <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-                </i>
-              </div>
-            </div>
-          ))}
-        </div>
-                  <button className="slider-btn right-btn" onClick={nextImaged}>&#10095;</button>
+                  <img src={product.src} alt={`Product ${index + 1}`} />
+                  <div className="layer">
+                    <h2>{product.name}</h2>
+                    <i onClick={() => showPopup(product)}>
+                      <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                    </i>
+                  </div>
                 </div>
-              </div>
+              ))}
             </div>
-          </main>
+            <button className="slider-btn right-btn" onClick={nextImaged}>&#10095;</button>
+          </div>
         </div>
-        {popupVisible && (
-        <div className="popup-overlay" onClick={closePopup}>
-          <div className="popup-content" onClick={(e) => e.stopPropagation()}>
-          <button className="close-btn" onClick={closePopup}>&#10005;</button>
-          <img src={selectedProduct.src} alt={selectedProduct.name} />
-          <h2>{selectedProduct.name}</h2>
-          <p>{selectedProduct.description}</p>
-        </div>
+      </div>
+    </main>
+  </div>
+  {popupVisible && selectedProduct && (
+  <div className="popup-overlay" onClick={closePopup}>
+    <div className="popup-content" onClick={(e) => e.stopPropagation()}>
+      <button className="close-btn" onClick={closePopup}>&#10005;</button>
+      <button className="slider-btn left-btn" onClick={prevPopupImage}>&#10094;</button>
+      <div className="popup-image-content">
+        <img src={selectedProduct.src} alt={selectedProduct.name} />
+        <h2>{selectedProduct.name}</h2>
+        <p>{selectedProduct.description}</p>
+      </div>
+      <button className="slider-btn right-btn" onClick={nextPopupImage}>&#10095;</button>
     </div>
-      )}
-      </section>
+  </div>
+)}
+
+</section>
 
       {/* Contact Section */}
       <section id="contact">
