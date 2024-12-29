@@ -126,31 +126,58 @@ const NexEther = () => {
         <div className="about-section">
           <main>
             <div className="about-container">
-              <div className="aboutus">
-                <h1>About Us</h1>
-                <p>
-                  NexEther is a blockchain startup focused on creating decentralized solutions for modern businesses and individuals. We are committed to building systems that leverage blockchain technology to provide security, efficiency, and transparency in an ever-evolving digital world.
-                </p>
-              </div>
-              <div className="down">
-                <div className="who">
-                  <h1>Who Are We?</h1>
-                  <p>
-                    NexEther is a Mockchain startup dedicated to building decentralized solutions. Our mission is to leverage blockchain technology to deliver secure, efficient, and transparent systems, empowering users with greater control over their data and processes.
-                  </p>
+              <div className="card values">
+                <div className="card-inner">
+                  <div className="card-front">
+                    <h1>CORE VALUES</h1>
+                  </div>
+                  <div className="card-back">
+                    <p>
+                      At NexEther, innovation drives us, with every team member contributing to creative solutions. Trust and transparency guide our work, while collaboration fuels our success. We’re committed to excellence, always striving for the highest standards.
+                    </p>
+                  </div>
                 </div>
-                <div className="choose">
-                  <h1>Why Choose Us?</h1>
-                  <p>
-                    At NexEther, we believe that blockchain technology represents the future of how industries operate. By removing intermediaries and offering trustless systems, we aim to empower organizations with more secure, streamlined, and scalable platforms.
-                  </p>
+              </div>
+              <div className="card mission">
+                <div className="card-inner">
+                  <div className="card-front">
+                    <h1>OUR MISSION</h1>
+                  </div>
+                  <div className="card-back">
+                    <p>
+                      Our mission is to empower businesses and individuals with secure, transparent, and decentralized solutions, driving innovation and control in the digital world.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="card vision">
+                <div className="card-inner">
+                  <div className="card-front">
+                    <h1>OUR VISION</h1>
+                  </div>
+                  <div className="card-back">
+                    <p>
+                      Our vision is to create a decentralized world where businesses and individuals have full control, with secure, transparent, and innovative solutions that transform industries.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="card aboutus">
+                <div className="card-inner">
+                  <div className="card-front">
+                    <h1>ABOUT US</h1>
+                  </div>
+                  <div className="card-back">
+                    <p>
+                      At NexEther, we’re revolutionizing industries with blockchain—bringing security, transparency, and control to finance, supply chains, and digital identities. No middlemen, just scalable solutions for real-world problems. Let’s shape a smarter, decentralized future together!
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </main>
         </div>
       </section>
-{/* Products Section */}
 {/* Products Section */}
 <section id="products">
   <div className="product-section">
@@ -188,11 +215,13 @@ const NexEther = () => {
       </div>
     </main>
   </div>
+
   {popupVisible && (
     <div className="popup-overlay" onClick={closePopup}>
       <div className="popup-content" onClick={(e) => e.stopPropagation()}>
         <button className="close-btn" onClick={closePopup}>&#10005;</button>
         <button className="slider-btn left-btn" onClick={prevPopupImage}>&#10094;</button>
+        <div className='border-line'> </div>
         <div className="popup-image-content">
           <img src={selectedProduct.src} alt={selectedProduct.name} />
           <h2>{selectedProduct.name}</h2>
@@ -250,9 +279,9 @@ const NexEther = () => {
         </div>
         <div className="third">
           <h1>Our Products</h1>
-          <a href="product1.html" target="_blank">Arogya Locker</a>
-          <a href="product2.html" target="_blank">Decentralized Browser</a>
-          <a href="product3.html" target="_blank">Social Media</a>
+          <a href="product1.html" target="_blank" className="product-link">Arogya Locker</a>
+          <a href="product2.html" target="_blank" className="product-link">Decentralized Browser</a>
+          <a href="product3.html" target="_blank" className="product-link">Social Media</a>
         </div>
         <div className="fourth">
         <h1>Follow Us</h1>

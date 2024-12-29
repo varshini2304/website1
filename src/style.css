@@ -91,6 +91,7 @@ section {
     text-decoration: none;
     background: radial-gradient(circle,#DBCC99, #d59835);
     -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
     text-shadow: 0px 8px 8px rgba(0, 0, 0, 0.6);
   }
@@ -485,115 +486,92 @@ section {
 
 /*----------------About Section_----------------------- */
 
-
-.about-container,
-.aboutus,
-.down,
-.who,
-.choose {
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideUp {
-  from {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.about-section {
-  color: #fff;
-  min-height: 100vh;
-  justify-items: center;
-}
-
 .about-container {
-  width: 1071px;
-  height: 450px;
-  top: 14px;
-  gap: 0px;
-  border-radius: 25px;
-  padding: 50px;
-  padding-bottom: 5px;
-  background: transparent;
   position: relative;
-  animation: slideUp 2.5s ease-in-out 2s;
-  opacity: 1;
+  width: 900px;
+  top: 200px;
+  margin: auto;
+
+}
+
+.aboutus, .mission, .vision, .values {
+  position: absolute;
+  width: 350px;
+  height: 220px;
+  color: white;
+}
+
+.values {
+  top: -80px;
+  left: -170px;
+  padding: 20px;
+  z-index: 4;
+
+}
+
+.mission {
+  top: 100px;
+  left: 140px;
+  padding: 20px;
+  z-index: 3;
+}
+
+.vision {
+  top: 300px;
+  left: 450px;
+  padding: 20px;
+  z-index: 4;
 }
 
 .aboutus {
-  justify-content: center;
-  opacity: 1;
+  top: -100px;
+  width: 400px;
+  height: 300px;
+  left: 700px;
+  padding: 40px;
+  z-index: 4;
 }
 
-.aboutus h1 {
-  color: #DBCC99;
-  font-size: 2em;
-  padding-left: 490px;
+.card {
+  perspective: 1000px;
+  width: 300px;
+  height: 300px;
+  background-color: transparent;
 }
 
-.aboutus p {
-  margin: auto;
-  padding: 20px;
+.card-values{
+  background-color: #DBCC99;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
   text-align: center;
-  max-width: 1200px;
-  font-size: 1.2em;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
 }
 
-.down {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 100px;
-  padding: 60px;
-  opacity: 1;
+.card:hover .card-inner {
+  transform: rotateY(180deg);
 }
 
-.who,
-.choose {
-  text-align: left;
-  opacity: 1;
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+  align-items: center;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-.who h1,
-.choose h1 {
-  color: #DBCC99;
-  font-size: 2em;
+.card-back {
+  transform: rotateY(180deg);
 }
-
-.who p,
-.choose p {
-  color: #ffffff;
-  padding-top: 20px;
-  font-size: 1.2em;
-}
-
-.who:hover h1,
-.choose:hover h1 {
-  color: #f0e68c;
-}
-
-.who:hover p,
-.choose:hover p {
-  color: #d3d3d3;
-}
-
-
-
-
 
 
 /*--------------------------------------Products Section --------------------------------*/
@@ -663,7 +641,6 @@ section {
   border-radius: 20px;
   transition: transform 03s ease-in-out;
 }
-
 
 #slider-image {
   transform: scale(1.2);
@@ -964,9 +941,6 @@ section {
 
 
 
-
-
-
 /*-------------Contact Us ----------------------*/
 
 
@@ -1058,10 +1032,10 @@ section {
   padding: 20px;
   border-radius: 20px;
   border-style: none;
-  background: linear-gradient(#767272, #d59835);
+  background: linear-gradient(#DBCC99, #d59835);
 }
 .left button:hover{
-  background: linear-gradient(#d59835, #767272);
+  background: linear-gradient(#d59835, #DBCC99);
 }
 
 .right-container{
@@ -1148,7 +1122,7 @@ section {
   padding-right: 25px;
   border-radius: 20px;
   border-style: none;
-  background: linear-gradient(#767272, #d59835);
+  background: linear-gradient(#DBCC99, #d59835);
 }
 
 .third h1{
@@ -1168,6 +1142,22 @@ section {
   background-color: transparent;
   text-decoration: none;
   margin-left: -20px;
+}
+
+.third .product-link{
+  font-size: 30px;
+  margin-right: 15px;
+  color: #d59835;
+  transition: all 0.3s ease;
+}
+
+.third .product-link:hover{
+  color: #d59835;
+  transform: scale(1.2);
+  text-decoration: none;
+  filter: drop-shadow(0 0 6px #000);
+  transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  transform: scale(1.05) rotate(0.5deg);
 }
 
 .fourth h1{
