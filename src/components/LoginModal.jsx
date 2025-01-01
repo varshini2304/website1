@@ -4,7 +4,8 @@ import { faGooglePlusG, faFacebookF, faGithub, faLinkedinIn } from '@fortawesome
 import './style.css'; // Make sure this CSS file exists for modal styling
 
 const LoginModal = ({ showLoginModal, handleCloseModal, toggleForm, isSignUp }) => {
-  if (!showLoginModal) return null; // Don't render if modal is not visible
+  if (!showLoginModal) return null;
+
 
   return (
     <div className="modal">

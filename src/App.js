@@ -20,6 +20,12 @@ const App = () => {
     setIsSignUp((prev) => !prev);
   };
 
+  // Close login modal
+  const handleCloseModal = () => {
+    setShowLoginModal(false);
+    setIsSignUp(false); // Reset to sign in
+  };
+
   // Array of product details
   const products = [
     { src: product1, name: 'Decentralized Browser', description: 'A secure, decentralized browser with enhanced privacy.' },
@@ -43,7 +49,7 @@ const App = () => {
       {showLoginModal && (
         <LoginModal
           showLoginModal={showLoginModal}
-          onClose={() => setShowLoginModal(false)}
+          handleCloseModal={handleCloseModal} // Pass the close handler
           isSignUp={isSignUp}
           toggleForm={toggleForm}
         />
