@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import product1 from './product1.png';
 import product2 from './product2.png';
 import product3 from './product3.png';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Import FontAwesomeIcon
-import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'; // Import icons
-import ProductPopup from "./ProductPopup"; // Import the new component
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
+import ProductPopup from "./ProductPopup";
 
 const Product = () => {
   const [currentIndex, setCurrentIndex] = useState(0);

@@ -28,14 +28,184 @@ section {
     min-height: 100vh;
   }
 
-  .home-section, .about-section, .product-section, .contact-section, .end-section {
+  .home-section, .about-section, .product-section, .contact-section, .end-section, .loading-section{
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
+/*----------------------------------loading page -------------------*/
 
-/* --------------------------------Home Screen --------------------*/
+.loading-section {
+  height: 100vh;
+  right: 300px;
+  display: flex;
+  font-family: Arial, sans-serif;
+  background-repeat: no-repeat;
+  background-image: url(lobg.jpg);}
+
+.loading-container {
+  position: relative;
+  width: 400px;
+  height: 300px;
+}
+
+.hole {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  background: #474646;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  animation: animatethis 3s ease-in-out;
+  animation-delay: 1s;
+}
+
+@keyframes animatethis {
+  from {
+    height: 50px;
+    width: 400px;
+    opacity: 1;
+  }
+  to {
+    width: 1px;
+    height: 1px;
+    opacity: 0; /* Changed from 2 to 0 for proper fading */
+  }
+}
+
+.coinl {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  width: 376.65px;
+  height: 368.56px;
+  background-color: black;
+  background-image: url(logo.png);
+  background-size: 620px;
+  background-position: top;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  animation: popUp 3s ease-in-out;
+  transform: translateX(-50%);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+}
+
+.brand-name {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.5s;
+  color: #333;
+}
+
+@keyframes popUp {
+  0% {
+    bottom: -450px;
+    opacity: 0;
+    visibility: hidden;
+  }
+  25% {
+    bottom: -350px;
+    opacity: 0;
+  }
+  50% {
+    bottom: 350px;
+    opacity: 1;
+  }
+  75% {
+    bottom:  30px;
+    opacity: 1;
+  }
+  100% {
+    bottom: 0px;
+    opacity: 1;
+  }
+}
+
+.slide-text{
+  font-family: sans-serif;
+
+
+}
+
+.loadlogo {
+  opacity: 0;
+  position: absolute;
+  right: 50%;
+  margin-bottom: 80px;
+  width: 376.65px;
+  height: 368.56px;
+  background-color: black;
+  background-image: url(logo.png);
+  background-size: 620px;
+  background-position: top;
+  border-radius: 50%;
+  animation: slideFromCenter 5s ease-out forwards;
+  animation-delay: 3s;
+}
+
+@keyframes slideFromCenter {
+  0% {
+    top: 50%;
+    transform: translate(5%, -60%);
+    opacity: 1;
+  }
+  50% {
+    top: 50%;
+    transform: translate(-200%, -60%);
+    opacity: 1;
+  }
+  100% {
+    top: 50%;
+    transform: translate(-5%, -60%);
+    opacity: 1;
+  }
+}
+
+.title {
+  margin-bottom: 150px;
+  font-size: xxx-large;
+  width: 436px;
+  height: 121px;
+  top: 577px;
+  left: 552px;
+}
+
+.slide-text {
+  font-size: larger;
+  font-family: 'Afacad';
+  color: #000000;
+  position: absolute;
+  transform: translateX(30%);
+  animation: slide 1s forwards;
+  opacity: 0;
+  animation-delay: 7.6s;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(60%);
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    transform: translateX(31%) translateX(6px);
+    opacity: 1;
+  }
+}
+
+
+/* --------------------------------Home Screen ---------------------*/
 
 .home-section{
   color: #fff;
@@ -1252,7 +1422,7 @@ section {
 }
 
 .end-container {
-  width: 1580px;
+  width: 100%;
   height: 220px;
   bottom: -200px;
   backdrop-filter: blur(45px);
@@ -1327,7 +1497,7 @@ section {
   display:grid;
   color: #DBCC99;
   padding-bottom: 20px;
-  font-size: 1.3em;
+  font-size: 10px;
   text-align: left;
   background-color: transparent;
   text-decoration: none;
@@ -1335,7 +1505,6 @@ section {
 }
 
 .third .product-link{
-  font-size: 30px;
   margin-right: 15px;
   color: #d59835;
   transition: all 0.3s ease;
@@ -1345,9 +1514,9 @@ section {
   color: #d59835;
   transform: scale(1.2);
   text-decoration: none;
-  filter: drop-shadow(0 0 6px #000);
+  filter: drop-shadow(0 0 6px transparent);
   transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-  transform: scale(1.05) rotate(0.5deg);
+  transform: scale(1.05);
 }
 
 .fourth h1{
