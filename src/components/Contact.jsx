@@ -3,33 +3,43 @@ import './style.css';
 
 const Contact = () => (
   <section id="contact">
-  <div className="contact-section">
-    <main>
-      <div className="contact-container">
-        <h1>CONTACT US</h1>
-        <p><span>We are here to help you with anything!</span></p>
-        <div className="arrange">
-          <div className="left">
-            <form onSubmit={(e) => { e.preventDefault(); alert('Message Sent!'); }}>
-              <input type="text" placeholder="Name" required />
-              <input type="email" placeholder="Email" required />
-              <textarea name="message" placeholder="Your message" required></textarea>
-              <button type="submit">Send Message</button>
-            </form>
-          </div>
-          <div className="right">
-            <div className="right-container">
-              <p>+91 8861644090 <br /> Feel free to call us! Our working hours are: Mon-Sat 9am-5pm</p>
-              <p>contactxyz@nexether.com <br /> Have any questions or concerns? Contact our Support team!</p>
-              <p>123 xyz street, district, state, country - 123456 <br /> Headquarters</p>
-            </div>
-          </div>
+    <div className="contact-section">
+      <div className='left-con'>
+        <h1>Contact Us</h1>
+        <p>Have a question or want to get in touch? Send us a message and we will get back to you as soon as possible!</p>        <button type='submit'>SEND A MESSAGE</button>
+      </div>
+      <div className='right-con'>
+        <h2>Contact Info</h2>
+        <div className='info-block'>
+          <i className="fa fa-map-marker" aria-hidden="true"></i>
+          <p>Our Office<br/>
+            1234 Divi St. #1000, San Francisc, CA 93251</p>
+        </div>
+        <div className='info-block'>
+          <i className="fa fa-clock-o" aria-hidden="true"></i>
+          <p>Open Office Hours<br />
+            M-F: 8am-6pm<br/>
+            S-S: 10am-4pm</p>
+        </div>
+        <div className='info-block'>
+          <i className="fa fa-comments" aria-hidden="true"></i>
+          <p>Get in Touch<br />
+            divibuild.com<br/>
+            (346) 426-2351</p>
+        </div>
+        <div className='social-icons'>
+          <a href="https://www.facebook.com/"><i className="fa fa-facebook" aria-hidden="true"></i></a>
+          <a href="https://twitter.com/"><i className="fa fa-twitter" aria-hidden="true"></i></a>
+          <a href="https://www.linkedin.com/"><i className="fa fa-linkedin" aria-hidden="true"></i></a>
         </div>
       </div>
-    </main>
-  </div>
-</section>
-
+    </div>
+    <div className="call-section">
+      <p>Call: (541) 931-3526</p>
+ <p>Email: support@nexether.com</p>
+      <p>Address: 123 xyz street, district, state, country - 123456</p>
+    </div>
+  </section>
 );
 
 export default Contact;

@@ -14,21 +14,25 @@ import product3 from "./product3.png";
 import "./style.css";
 
 const App = () => {
+  // State management
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [isSignUp, setIsSignUp] = useState(false);
   const [popupVisible, setPopupVisible] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [isLoading, setIsLoading] = useState(true); // State to manage loading page visibility
 
+  // Simulate loading time
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 10000); // Show loading page for 5 seconds (increased from 3 seconds)
+    }, 3000); // Show loading page for 3 seconds
     return () => clearTimeout(timer);
   }, []);
 
+  // Toggle between login and signup forms
   const toggleForm = () => setIsSignUp((prev) => !prev);
 
+  // Close modal functions
   const handleCloseModal = () => {
     setShowLoginModal(false);
     setIsSignUp(false);
@@ -39,23 +43,26 @@ const App = () => {
     setSelectedProduct(null);
   };
 
+  // Product data
   const products = [
     { src: product1, name: "Decentralized Browser", description: "A secure, decentralized browser with enhanced privacy." },
     { src: product2, name: "Social Media Application", description: "A blockchain-based social media platform for secure sharing." },
     { src: product3, name: "Arogya Locker", description: "A health data storage solution leveraging blockchain." },
   ];
 
+  // Show product popup
   const showPopup = (product) => {
     setSelectedProduct(product);
     setPopupVisible(true);
   };
 
+  // Render loading screen if loading
   if (isLoading) {
     return <Loading />;
   }
 
   return (
-    <div>
+    <>
       <Header onLoginClick={() => setShowLoginModal(true)} />
       <Home />
       <About />
@@ -73,7 +80,7 @@ const App = () => {
       {popupVisible && selectedProduct && (
         <Popup product={selectedProduct} onClose={handleClosePopup} />
       )}
-    </div>
+    </>
   );
 };
 

@@ -68,7 +68,7 @@ const Product = () => {
   };
 
   useEffect(() => {
-    const interval = setInterval(nextImaged, 3500);
+    const interval = setInterval(nextImaged, 5500);
     return () => clearInterval(interval);
   }, []);
 

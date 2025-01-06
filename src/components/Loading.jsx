@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from "react";
-import "./style.css"; // Ensure this file contains all your styles
+import React, { useEffect, useRef } from 'react';
+import './style.css'; // Ensure you have the CSS in the same directory
 
 const Loading = () => {
   const coinRef = useRef(null);
@@ -16,13 +16,12 @@ const Loading = () => {
     };
 
     if (coin) {
-      coin.addEventListener("animationend", handleAnimationEnd);
+      coin.addEventListener('animationend', handleAnimationEnd);
     }
 
-    // Cleanup event listener on component unmount
     return () => {
       if (coin) {
-        coin.removeEventListener("animationend", handleAnimationEnd);
+        coin.removeEventListener('animationend', handleAnimationEnd);
       }
     };
   }, []);
@@ -31,12 +30,12 @@ const Loading = () => {
     <section id="loading" className="loading-section">
       <div className="loading-container">
         <div className="hole"></div>
-        <div className="coinl" ref={coinRef}></div>
-        <div className="brand-name" ref={brandNameRef}></div>
-      </div>
-      <div className="loadlogo"></div>
-      <div className="title">
-        <b className="slide-text"><h1>NexEther</h1></b>
+        <div className="coinb" ref={coinRef}></div>
+        <div className="brand-name" ref={brandNameRef}>NexEther</div>
+        <div className="logob"></div>
+        <div className="title">
+          <h1 className="slide-text">NexEther</h1>
+        </div>
       </div>
     </section>
   );

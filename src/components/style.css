@@ -37,16 +37,23 @@ section {
 /*----------------------------------loading page -------------------*/
 
 .loading-section {
-  height: 100vh;
-  right: 300px;
+  position: fixed; /* Fixed position to cover the entire viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
-  font-family: Arial, sans-serif;
+  align-items: center;
+  justify-content: center;
+  background-image: url('lobg.jpg');
+  background-size: cover;
   background-repeat: no-repeat;
-  background-image: url(lobg.jpg);}
+  z-index: 9999; /* Ensure it appears above other content */
+}
 
 .loading-container {
   position: relative;
-  width: 400px;
+  width: 200px;
   height: 300px;
 }
 
@@ -70,13 +77,13 @@ section {
   to {
     width: 1px;
     height: 1px;
-    opacity: 0; /* Changed from 2 to 0 for proper fading */
+    opacity: 0;
   }
 }
 
-.coinl {
+.coinb {
   position: absolute;
-  bottom: 0px;
+  bottom: 0;
   left: 50%;
   width: 376.65px;
   height: 368.56px;
@@ -112,35 +119,19 @@ section {
   0% {
     bottom: -450px;
     opacity: 0;
-    visibility: hidden;
-  }
-  25% {
-    bottom: -350px;
-    opacity: 0;
   }
   50% {
     bottom: 350px;
     opacity: 1;
   }
-  75% {
-    bottom:  30px;
-    opacity: 1;
-  }
   100% {
-    bottom: 0px;
+    bottom: 0;
     opacity: 1;
   }
 }
 
-.slide-text{
-  font-family: sans-serif;
-
-
-}
-
-.loadlogo {
+.logob {
   opacity: 0;
-  position: absolute;
   right: 50%;
   margin-bottom: 80px;
   width: 376.65px;
@@ -150,6 +141,7 @@ section {
   background-size: 620px;
   background-position: top;
   border-radius: 50%;
+  position: absolute;
   animation: slideFromCenter 5s ease-out forwards;
   animation-delay: 3s;
 }
@@ -177,13 +169,10 @@ section {
   font-size: xxx-large;
   width: 436px;
   height: 121px;
-  top: 577px;
-  left: 552px;
 }
 
 .slide-text {
   font-size: larger;
-  font-family: 'Afacad';
   color: #000000;
   position: absolute;
   transform: translateX(30%);
@@ -691,7 +680,7 @@ section {
 .aboutus, .mission, .vision, .values {
   position: absolute;
   color: white;
-  border-radius: 30px 50px; 
+  border-radius: 30px 50px;
 }
 
 .values {
@@ -1193,7 +1182,7 @@ section {
   max-width: 600px;
   text-align: center;
   position: relative;
-  animation: slideIn 0.4s ease-out;
+  animation: slideIn 0.6s ease-out;
   color: #fff;
 }
 
@@ -1218,7 +1207,7 @@ section {
   border: 2px solid transparent;
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), rgba(213, 152, 53, 0.8), rgba(255, 255, 255, 0.8));
   background-size: 200% 200%;
-  animation: moveBorder 3s linear infinite;
+  animation: moveBorder 5s linear infinite;
   z-index: 2;
   pointer-events: none;
 }
@@ -1311,102 +1300,106 @@ section {
   color: #fff;
   min-height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+}
+
+#contact{
+  padding: 140px 0;
+}
+
+
+.contact-section {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  max-width: 1200px;
+  margin: 0;
 }
 
-  .contact-container {
-    width: 1071px;
-    height: 450px;
-    top: 40px;
-    border-radius: 25px;
-    background: transparent;
-    border-color: #d59835;
-    border-style: solid;
-    border-width: 5px;
-    border-left: none;
-    border-top: none;
-    border-top-right-radius: 50px;
-    border-bottom-right-radius: 50px;
-    position: relative;
-    padding: 50px;
-    text-align: center;
-  }
-
-.contact-container h1{
-  color: #DBCC99;
-  font-size: 2.9em;
-  padding-bottom: 10px;
+.left-con {
+  flex: 1;
+  padding-right: 50px;
 }
 
-.contact-container p{
-  font-size: 1.1em;
-  color: #000;
+.right-con {
+  margin-left: 1650px;
+  margin-top: -280px;
+  margin-bottom: 350px;
+  padding: 100px;
+  width: 311px;
+  height: 585px;
+  background-color: #a49849;
 }
 
-.contact-container p span{
-  font-size: 1.3em;
-  color: #CFCFCFE8;
+.left-con h1, h2{
+  color: #ededed;
+  font-weight: bold;
+  font-family: sans-serif;
+  margin-bottom: 20px;
 }
 
-.arrange{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 100px;
-  padding: 60px;
+.left-con p { 
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
 }
 
-
-.left p{
-  font-size: 1.2em;
-  text-align: center;
+button {
+  background-color: #ff9900;
+  color: #fff;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.left input{
-  width: 100%;
-  padding: 20px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 20px;
-  font-size: 16px;
+button:hover {
+  background-color: #ff6600;
 }
-.left textarea{
-  width: 100%;
-  padding: 20px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 20px;
-  color: #000;
-  font-size: 16px;
+.right-con{
+  right: 10px;
+
+}
+.info-block {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-.left textarea :placeholder-shown{
-   color: #000;
+.info-block i {
+  font-size: 24px;
+  color: #ff9900;
+  margin-right: 10px;
 }
 
-.left a{
-  color: #DBCC99;
+.social-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
 }
 
-.left button{
-  padding: 20px;
-  border-radius: 20px;
-  border-style: none;
-  background: linear-gradient(#DBCC99, #d59835);
-}
-.left button:hover{
-  background: linear-gradient(#d59835, #DBCC99);
+.social-icons a {
+  display: inline-block;
+  margin: 0 10px;
+  color: #333;
+  transition: color 0.3s ease;
 }
 
-.right-container{
-  background: #CFCFCFE8;
-  border-radius: 40px;
-  width: 450px;
-  padding: 40px;
+.social-icons a:hover {
+  color: #ff9900;
 }
 
-.right-container p{
-  padding: 15px;
+.call-section {
+  text-align: center; padding: 20px;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+}
+
+.call-section p {
+  color: #555;
+  margin: 5px 0;
 }
 
 
