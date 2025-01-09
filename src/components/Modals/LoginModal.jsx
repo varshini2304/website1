@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGooglePlusG, faFacebookF, faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
-import './style.css'; // Make sure this CSS file exists for modal styling
+import '../../styles/style.css';
 
 const LoginModal = ({ showLoginModal, handleCloseModal, toggleForm, isSignUp }) => {
   if (!showLoginModal) return null;

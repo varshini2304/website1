@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from "react";
-import Header from "./components/Header";
-import Home from "./components/Home";
-import About from "./components/About";
-import Products from "./components/Products";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-import LoginModal from "./components/LoginModal";
-import Popup from "./components/ProductPopup";
-import Loading from "./components/Loading"; // Import Loading component
-import product1 from "./product1.png";
-import product2 from "./product2.png";
-import product3 from "./product3.png";
-import "./style.css";
+import Header from "./components/Layout/Header.jsx";
+import Home from "./pages/Home.jsx";
+import About from "./components/Sections/About.jsx";
+import Products from "./components/Sections/Products.jsx";
+import Contact from "./pages/Contact.jsx";
+import Footer from "./components/Layout/Footer.jsx";
+import LoginModal from "./components/Modals/LoginModal.jsx";
+import Popup from "./components/Modals/ProductPopup.jsx";
+import Loading from "./components/Layout/Loading/Loading.jsx";
+import product1 from "./assets/images/product1.png";
+import product2 from "./assets/images/product2.png";
+import product3 from "./assets/images/product3.png";
+import "./styles/style.css";
+
 
 const App = () => {
   // State management
@@ -25,7 +26,7 @@ const App = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 3000); // Show loading page for 3 seconds
+    }, 10000); // Show loading page for 3 seconds
     return () => clearTimeout(timer);
   }, []);
 

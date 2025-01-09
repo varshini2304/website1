@@ -1,12 +1,11 @@
 import React from 'react';
-import './style.css';
+import "./footer.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Import FontAwesomeIcon
-import { faLinkedin, faInstagram, faTwitter, faGooglePlusG, faFacebookF, faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
-import logo from './logo.png'; // Adjust the path as necessary
+import { faLinkedin, faInstagram, faTwitter, faFacebookF } from '@fortawesome/free-brands-svg-icons';
+import logo from "../../assets/images/logo.png";
 const Footer = () => (
 
   <footer>
-  <main>
     <div className="end-container">
       <div className="sort">
         <div className="first">
@@ -35,8 +34,7 @@ const Footer = () => (
         </div>
       </div>
     </div>
-  </main>
-      </footer>
+  </footer>
 );
 
 export default Footer;

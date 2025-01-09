@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import './style.css'; // Ensure you have the CSS in the same directory
+import "../../../styles/style.css";
 
 const Loading = () => {
   const coinRef = useRef(null);
@@ -31,7 +31,6 @@ const Loading = () => {
       <div className="loading-container">
         <div className="hole"></div>
         <div className="coinb" ref={coinRef}></div>
-        <div className="brand-name" ref={brandNameRef}>NexEther</div>
         <div className="logob"></div>
         <div className="title">
           <h1 className="slide-text">NexEther</h1>

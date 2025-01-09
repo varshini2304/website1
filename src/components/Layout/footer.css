@@ -1,0 +1,132 @@
+
+
+  .end-container {
+    width: 100%;
+    height: 220px;
+    backdrop-filter: blur(45px);
+    background: rgba(112, 112, 112, 0.285); /* Semi-transparent */
+    position: relative;
+    padding-left: 50px;
+    padding-top: 50px;
+    padding-bottom: 60px;
+    padding-right: 50px;
+    text-align: center;
+  }
+
+  .sort{
+    display: flex;
+    gap: 200px;
+    padding: 40px;
+  }
+
+  .first img{
+    height: 150px;
+    margin-left: -20px;
+    width: 150px;
+    margin-top: -20px;
+  }
+
+  .second{
+    margin-top: -60px;
+    margin-left: -100px;
+    text-align: center;
+    padding: 40px;
+  }
+  .second h1{
+    font-size: 1.7em;
+    padding-bottom: 20px;
+    text-align: center;
+  }
+  .second p{
+     font-size: .8em;
+     padding-bottom: 20px;
+     text-align: center;
+     margin-left: 20px;
+     color: #000;
+  }
+
+  .second input{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 10px;
+  }
+
+  .second button{
+    padding: 8px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 20px;
+    border-style: none;
+    background: linear-gradient(#DBCC99, #d59835);
+  }
+
+  .third h1{
+    margin-top: -24px;
+    text-align: left;
+    font-size: 1.7em;
+    padding-bottom: 20px;
+    margin-left: -20px;
+  }
+
+  .third a{
+    display:grid;
+    color: #DBCC99;
+    padding-bottom: 20px;
+    font-size: 25px;
+    text-align: left;
+    background-color: transparent;
+    text-decoration: none;
+    margin-left: -20px;
+  }
+
+  .third .product-link{
+    margin-right: 15px;
+    color: #d59835;
+    transition: all 0.3s ease;
+  }
+
+  .third .product-link:hover{
+    color: #d59835;
+    transform: scale(1.2);
+    text-decoration: none;
+    filter: drop-shadow(0 0 6px transparent);
+    transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    transform: scale(1.05);
+  }
+
+  .fourth h1{
+    margin-top: -22px;
+    font-size: 1.7em;
+  }
+
+  .fourth a {
+    font-size: 25px;
+    display: grid;
+    color: #DBCC99;
+    text-decoration: none;
+    padding: 5px;
+  }
+
+  .fourth .social-icon {
+    font-size: 30px;
+    margin-right: 15px;
+    color: #d59835;
+    transition: all 0.3s ease;
+  }
+
+  .fourth .social-icon:hover {
+    color: #d59835;
+    transform: scale(1.2);
+    text-decoration: none;
+  }
+
+  .fourth .social-icon:hover {
+    filter: drop-shadow(0 0 8px #d59835); /* Glow effect */  transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .fourth .social-icon:hover {
+    transform: scale(1.2) rotate(-15deg);
+  }

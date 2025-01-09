@@ -1,6 +1,6 @@
 import React from 'react';
-import logo from './logo.png';
-import './style.css';
+import logo from '../../assets/images/logo.png';
+import "./header.css";
 
 const Header = ({ onLoginClick }) => (
   <header className="navbar">

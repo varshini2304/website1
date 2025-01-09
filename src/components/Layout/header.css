@@ -1,0 +1,71 @@
+
+.home-section{
+    color: #fff;
+    min-height: 100vh;
+  }
+  
+  .navcontainer{
+    background-color: transparent;
+    padding-top: 20px;
+    left: 50px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+  }
+  
+  
+  .navbar {
+    position: fixed;
+    justify-content: left;
+    align-items:normal;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 10px 40px;
+    background-color: transparent;
+  }
+  
+  
+  .navbar .logo {
+      display: flex;
+      align-items: center;
+    }
+  .navbar .logo-img {
+      margin-left: 50px;
+      width: 8%;
+      height: 120px;
+    }
+  .navbar .logo span {
+      margin-left: 10px;
+      font-size: 2rem;
+      font-weight: bold;
+      color: #a49849;
+  }
+  
+  
+  .navbar .logo span p{
+    font-size: 0.5em;
+    }
+  
+  .navbar .menu a {
+      margin: 0 20px;
+      font-size: 1.4em;
+      font-style: 'Jura';
+      text-decoration: none;
+      background: radial-gradient(circle,#DBCC99, #d59835);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0px 8px 8px rgba(0, 0, 0, 0.6);
+    }
+  
+  .navbar .menu a:hover {
+      color: #ffffff;
+    }
+  
+  .navbar .menu a.active{
+      margin: 0 10px;
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 1.4em;
+    }
+  
