@@ -5,7 +5,9 @@ import product3 from '../../assets/images/product3.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import ProductPopup from '../../components/Modals/ProductPopup.jsx';
-import "./product.css";
+import '../../styles/product.css';
+
+
 const Product = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [popupVisible, setPopupVisible] = useState(false);

@@ -12,7 +12,7 @@ const ProductPopup = ({
   return (
     <div className="popup-overlay" onClick={closePopup}>
       <div className="popup-content" onClick={(e) => e.stopPropagation()}>
-        <button className="close-btn" onClick={closePopup}>
+        <button className="close-btn1" onClick={closePopup}>
           &#10005;
         </button>
         <button className="slider-btn left-btn" onClick={prevPopupImage}>

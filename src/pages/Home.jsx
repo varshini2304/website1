@@ -1,5 +1,7 @@
 import React from 'react';
 import "../styles/style.css";
+import "../styles/hero.css";
+
 
 const Home = () => (
   <section id="home" className="home-section">

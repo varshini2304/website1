@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import "../../../styles/style.css";
+import "../../../styles/loading.css";
 
 const Loading = () => {
   const coinRef = useRef(null);

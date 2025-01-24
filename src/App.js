@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
+import Background from './components/ParticleBackground.jsx';
 import Header from "./components/Layout/Header.jsx";
 import Home from "./pages/Home.jsx";
 import About from "./components/Sections/About.jsx";
 import Products from "./components/Sections/Products.jsx";
+import Team from "./components/Sections/Team.jsx";
 import Contact from "./pages/Contact.jsx";
 import Footer from "./components/Layout/Footer.jsx";
 import LoginModal from "./components/Modals/LoginModal.jsx";
@@ -14,19 +16,20 @@ import product3 from "./assets/images/product3.png";
 import "./styles/style.css";
 
 
+
 const App = () => {
   // State management
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [isSignUp, setIsSignUp] = useState(false);
   const [popupVisible, setPopupVisible] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
-  const [isLoading, setIsLoading] = useState(true); // State to manage loading page visibility
+  const [isLoading, setIsLoading] = useState(true);
 
   // Simulate loading time
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 10000); // Show loading page for 3 seconds
+    }, 10000); // Show loading page for 10 seconds
     return () => clearTimeout(timer);
   }, []);
 
@@ -64,11 +67,13 @@ const App = () => {
 
   return (
     <>
+      <Background /> 
       <Header onLoginClick={() => setShowLoginModal(true)} />
       <Home />
       <About />
       <Products images={products} onProductClick={showPopup} />
       <Contact />
+      <Team />
       <Footer />
       {showLoginModal && (
         <LoginModal
