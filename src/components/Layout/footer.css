@@ -38,7 +38,7 @@
   padding-bottom: 20px;
   text-align: center;
   margin-left: 20px;
-  color: #000;
+  color: #ffffff;
 }
 
 .second input {
@@ -127,7 +127,7 @@
   display: grid;
   color: #DBCC99;
   padding-bottom: 20px;
-  font-size: 25px;
+  font-size: 18px;
   text-align: left;
   background-color: transparent;
   text-decoration: none;

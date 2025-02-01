@@ -70,7 +70,7 @@ const Product = () => {
   };
 
   useEffect(() => {
-    const interval = setInterval(nextImaged, 5500);
+    const interval = setInterval(nextImaged, 3500);
     return () => clearInterval(interval);
   }, []);
 

@@ -72,8 +72,8 @@ const App = () => {
       <Home />
       <About />
       <Products images={products} onProductClick={showPopup} />
-      <Contact />
       <Team />
+      <Contact />
       <Footer />
       {showLoginModal && (
         <LoginModal
