@@ -79,7 +79,7 @@ const Product = () => {
       <div className="product-section">
         <main>
           <div className="product-container">
-            <h1>OUR PRODUCTS</h1>
+            <h1>Our Products</h1>
             <div className="align">
               <div className="image-slider">
                 <button className="slider-btn left-btn" onClick={prevImaged}>

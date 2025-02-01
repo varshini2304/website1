@@ -21,10 +21,10 @@
 }
 
 .product-container h1 {
-  background: linear-gradient(#DBCC99, #ffc107);
+  background: linear-gradient(#dbcc99, #ffc107);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 2.9em;
+  font-size: 4em;
   margin-bottom: 30px;
 }
 
@@ -201,7 +201,7 @@
   font-style: italic;
   text-align: center;
   font-size: 2.1em;
-  color: #DBCC99;
+  color: #dbcc99;
   font-family: Inknut Antiqua;
 }
 
@@ -269,7 +269,7 @@
 }
 
 .popup-content img::after {
-  content: '';
+  content: "";
   position: absolute;
   top: -5px;
   left: -5px;
@@ -277,7 +277,12 @@
   height: calc(100% + 10px);
   border-radius: 15px;
   border: 2px solid transparent;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), rgba(213, 152, 53, 0.8), rgba(255, 255, 255, 0.8));
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.8),
+    rgba(213, 152, 53, 0.8),
+    rgba(255, 255, 255, 0.8)
+  );
   background-size: 200% 200%;
   animation: moveBorder 5s linear infinite;
   z-index: 2;
@@ -318,14 +323,14 @@
 }
 
 .popup-content h2 {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 24px;
   color: #d59835;
   margin: 15px 0 10px;
 }
 
 .popup-content p {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 16px;
   color: #ddd;
   line-height: 1.5;
@@ -354,7 +359,6 @@
 }
 
 @media (max-width: 768px) {
-
   .popup-content,
   .modal-content {
     width: 90%;
