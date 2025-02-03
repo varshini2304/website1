@@ -23,20 +23,20 @@
   margin-top: -326px;
   margin-bottom: 250px;
   padding: 95px;
-  width: 290px;
-  height: 500px;
+  width: 18.69999%;
+  height: 549px;
   background-color: #ffc107b7;
 }
 
 .right-con h2 {
   font-size: 3em;
-  color: #c4c2c2;
+  color: #ffffff;
   margin-bottom: 40px;
 }
 
 .left-con h1 {
   font-size: 3.5em;
-  background: linear-gradient(#DBCC99, #ffc107);
+  background: linear-gradient(#dbcc99, #ffc107);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 20px;
@@ -49,8 +49,7 @@
   margin-bottom: 40px;
 }
 
-.left-con
-h2 {
+.left-con h2 {
   color: #ededed;
   font-weight: bold;
   font-family: sans-serif;
@@ -61,32 +60,6 @@ h2 {
   color: #9c9a9a;
   line-height: 1.6;
   font-size: 1.2em;
-}
-
-.primary-btn {
-  position: relative;
-  background-color: transparent;
-  color: #fff;
-  padding: 15px 30px;
-  border: none;
-  border-radius: 30px;
-  border: 2px solid #d59835;
-  cursor: pointer;
-  overflow: hidden;
-  z-index: 0;
-  transition: color 0.3s ease;
-}
-
-.primary-btn::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background-color: #d59835;
-  z-index: -1;
-  transition: width 0.5s ease;
 }
 
 .primary-btn:hover {
@@ -144,28 +117,12 @@ h2 {
 }
 
 .call-section p {
-  color: #555;
   margin: 5px 0;
-}
-
-.hidden-card {
-  display: none;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(15px);
-  border-radius: 15px;
-  padding: 30px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  position: absolute;
-  top: -100px;
-  left: 0;
-  right: 0;
-  margin: auto;
-  max-width: 500px;
-  z-index: 1000;
 }
 
 .hidden-card.visible {
   display: block;
+  background: transparent;
 }
 
 .hidden-card form {
@@ -176,11 +133,14 @@ h2 {
 
 .hidden-card input,
 .hidden-card textarea {
-  background: rgba(255, 255, 255, 0.107);
-  border: none;
+  background: none;
+  border-bottom: 1px solid grey;
+  border-top: none;
+  border-left: none;
+  border-right: none;
   border-radius: 10px;
-  padding: 15px;
-  color: #fff;
+  padding: 20px;
+  color: #434040;
   font-size: 16px;
   outline: none;
   transition: all 0.3s ease;
@@ -272,7 +232,6 @@ h2 {
 }
 
 .container form {
-  backdrop-filter: blur(45px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -311,32 +270,12 @@ h2 {
 .hidden-card {
   display: none;
   position: absolute;
-  background: #dbcc990d;
-  border-radius: 10px;
-  padding: 20px;
-  backdrop-filter: blur(10px);
-  width: 400px;
-  top: 340px;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1000;
+  background: transparent;
+  width: 30%;
+  backdrop-filter: blur(5px);
+  z-index: 1;
 }
 
 button.hide-button {
   display: none;
-}
-
-.close-btn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 2rem;
-  color: white;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.close-btn:hover {
-  color: #d6b635;
 }

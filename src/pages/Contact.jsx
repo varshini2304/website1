@@ -6,11 +6,6 @@ import "../styles/style.css";
 import "../styles/contact.css";
 
 const Contact = () => {
-  const [showCard, setShowCard] = useState(false);
-
-  const toggleCard = () => {
-    setShowCard(!showCard);
-  };
 
   return (
     <section id="contact">
@@ -18,11 +13,6 @@ const Contact = () => {
         <div className='left-con'>
           <h1>Contact Us</h1>
           <p>Have a question or want to get in touch? Send us a message and we will get back to you as soon as possible!</p>
-          <button type='button' className="primary-btn" onClick={toggleCard}>
-            {showCard ? 'Close Form' : 'Send a Message'}
-          </button>
-
-          {showCard && (
             <div className="hidden-card visible">
               <form onSubmit={(e) => { e.preventDefault(); alert('Message Sent!'); }}>
                 <input type="text" placeholder="Name" required />
@@ -31,8 +21,7 @@ const Contact = () => {
                 <button type="submit" className="submit-btn">Send Message</button>
               </form>
             </div>
-          )}
-        </div>
+          </div>
 
         <div className='right-con'>
           <h2>Contact Info</h2>
