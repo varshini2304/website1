@@ -5,7 +5,7 @@ import "./header.css";
 const Header = ({ onLoginClick }) => (
   <header className="navbar">
     <div className="logo">
-      <img src={logo} alt="NexEther Logo" className="logo-img click" />
+      <img src={logo} alt="NexEther Logo" className="logo-img click" href="#home"/>
       <div className="navcontainer">
         <nav className="menu">
           <a href="#about" className="click">About Us</a>
