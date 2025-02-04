@@ -4,7 +4,6 @@ import Header from "./components/Layout/Header.jsx";
 import Home from "./pages/Home.jsx";
 import About from "./components/Sections/About.jsx";
 import Products from "./components/Sections/Products.jsx";
-import Team from "./components/Sections/Team.jsx";
 import Contact from "./pages/Contact.jsx";
 import Footer from "./components/Layout/Footer.jsx";
 import LoginModal from "./components/Modals/LoginModal.jsx";
@@ -72,7 +71,6 @@ const App = () => {
       <Home />
       <About />
       <Products images={products} onProductClick={showPopup} />
-      <Team />
       <Contact />
       <Footer />
       {showLoginModal && (
