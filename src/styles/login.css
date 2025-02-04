@@ -15,12 +15,12 @@
     padding: 20px;
     border-radius: 10px;
     max-width: 950px;
-    width: 100%;
+    width: 90%;
+    box-sizing: border-box;
 }
 
 .modal-content .close {
-    left: 200px;
-    margin-left: 500px;
+    margin-left: auto;
     cursor: pointer;
 }
 
@@ -30,10 +30,22 @@
     box-shadow: 0 5px 15px rgba(117, 114, 114, 0.603);
     position: relative;
     overflow: hidden;
-    width: 808px;
-    left: 100px;
-    max-width: 100%;
+    width: 90%;
+    max-width: 808px;
+    margin: 20px auto;
     min-height: 480px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        margin: 10px auto;
+    }
+
+    .modal-content {
+        width: 95%;
+    }
 }
 
 .container p {
@@ -67,8 +79,9 @@
     font-weight: 600;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    margin-top: 10px;
+    margin-top: 20px;
     cursor: pointer;
+    box-sizing: border-box; /* Added box-sizing */
 }
 
 .container .hidden:hover {
@@ -87,8 +100,9 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 0 40px;
+    padding: 0 20px; /* Adjusted padding */
     height: 100%;
+    box-sizing: border-box;
 }
 
 .container input {
@@ -105,6 +119,7 @@
     border-radius: 8px;
     width: 100%;
     outline: none;
+    box-sizing: border-box;
 }
 
 .form-container {
@@ -112,6 +127,8 @@
     top: 0;
     height: 100%;
     transition: all 0.6s ease-in-out;
+    width: 100%;
+    box-sizing: border-box; /* Added box-sizing */
 }
 
 .container a {
@@ -122,6 +139,7 @@
     left: 0;
     width: 50%;
     z-index: 2;
+    box-sizing: border-box;
 }
 
 .container.active .sign-in {
@@ -133,6 +151,7 @@
     width: 50%;
     opacity: 0;
     z-index: 1;
+    box-sizing: border-box;
 }
 
 .container.active .sign-up {
@@ -143,15 +162,11 @@
 }
 
 @keyframes move {
-
-    0%,
-    49.99% {
+    0%, 49.99% {
         opacity: 0;
         z-index: 1;
     }
-
-    50%,
-    100% {
+    50%, 100% {
         opacity: 1;
         z-index: 5;
     }
@@ -171,6 +186,7 @@
     margin: 0 3px;
     width: 40px;
     height: 40px;
+    box-sizing: border-box; /* Added box-sizing */
 }
 
 .toggle-container {
@@ -183,6 +199,7 @@
     transition: all 0.6s ease-in-out;
     border-radius: 150px 0 0 100px;
     z-index: 1000;
+    box-sizing: border-box; /* Added box-sizing */
 }
 
 .container.active .toggle-container {
@@ -225,6 +242,7 @@
     align-items: center;
     transform: translateX(0);
     transition: all 0.6s ease-in-out;
+    box-sizing: border-box;
 }
 
 .toggle-panel {
@@ -235,20 +253,20 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 30 30px;
+    padding: 30px;
     text-align: center;
     top: 0;
     transform: translateX(0);
     transition: all 0.6s ease-in-out;
+    box-sizing: border-box; /* Added box-sizing */
 }
 
-.toggle-right button {
+.toggle-right button, .toggle-left button {
     background-color: #fff;
     color: #333;
     position: absolute;
-    display: flex;
-    top: 280px;
-    flex-direction: column;
+    top: 280px;      /*Consider making this dynamic if needed */
+    /* Remove or adjust top, flex-direction if you don't want them absolutely positioned */
     border: none;
     border-radius: 8px;
     padding: 10px 45px;
@@ -256,21 +274,34 @@
     font-weight: bold;
     cursor: pointer;
     text-transform: uppercase;
+    transition: background-color 0.3s ease; /* Added transition */
+    box-sizing: border-box; /* Added box-sizing */
 }
 
-.toggle-left button {
-    background-color: #fff;
-    color: #333;
-    position: absolute;
-    display: flex;
-    top: 280px;
-    flex-direction: column;
-    border: none;
-    border-radius: 8px;
-    padding: 10px 45px;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-    text-transform: uppercase;
-    transition: background-color 0.3s ease;
+/*  Styles for the button text content (sign in/sign up) */
+.toggle-right button span, .toggle-left button span {
+    display: block; /* Make the span a block element for better layout control */
+    /* Add any other styling for the text here */
+}
+
+.toggle-right button:hover, .toggle-left button:hover {
+    background-color: #ddd; /* Example hover effect */
+    color: #000;
+}
+
+
+/* Media query adjustments for the toggle buttons */
+@media (max-width: 768px) {
+    .toggle-right button, .toggle-left button {
+        font-size: 12px; /* Smaller font size on smaller screens */
+        padding: 8px 30px; /* Smaller padding */
+        /* You might need to adjust the top position or other styles for smaller screens */
+        top: auto; /* Example: remove absolute positioning and let it flow naturally */
+        margin-top: 20px; /* Example: add some margin */
+        position: relative; /* Example: to make it relative to its parent */
+    }
+
+    .toggle-panel {
+        padding: 20px; /* Further reduce padding on very small screens if needed */
+    }
 }
