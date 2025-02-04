@@ -35,7 +35,6 @@
   transition: transform 0.8s ease;
 }
 
-
 .swiper-slide {
   right: -40px;
   left: -10px;
@@ -136,4 +135,140 @@
   align-items: center;
   position: relative;
   padding-left: 20px;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Small devices (phones, less than 600px) */
+@media screen and (max-width: 600px) {
+  .header-section1 {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .header-content1 h1 {
+    font-size: 2.5em;
+  }
+
+  .team-slider {
+    width: 90%;
+  }
+
+  .swiper-slide {
+    margin-right: 0;
+  }
+
+  .team-section {
+    flex-direction: column;
+    margin-top: 0;
+    gap: 20px;
+  }
+
+  .team-member {
+    max-width: 80%;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .image-placeholder {
+    width: 250px;
+    height: 270px;
+  }
+
+  .team-member h3 {
+    font-size: 1.1em;
+  }
+
+  .team-member p {
+    font-size: 0.9em;
+  }
+
+  .social-links .social-icon {
+    padding-left: 10px;
+  }
+}
+
+/* Medium devices (tablets, 600px to 1024px) */
+@media screen and (max-width: 1024px) {
+  .header-section1 {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .header-content1 h1 {
+    font-size: 3em;
+  }
+
+  .team-slider {
+    width: 80%;
+  }
+
+  .swiper-slide {
+    margin-right: 50px;
+  }
+
+  .team-section {
+    flex-direction: column;
+    margin-top: 0;
+    gap: 20px;
+  }
+
+  .team-member {
+    max-width: 75%;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .image-placeholder {
+    width: 270px;
+    height: 290px;
+  }
+
+  .team-member h3 {
+    font-size: 1.2em;
+  }
+
+  .team-member p {
+    font-size: 1em;
+  }
+
+  .social-links .social-icon {
+    padding-left: 15px;
+  }
+}
+
+/* Large devices (desktops, 1024px to 1440px) */
+@media screen and (max-width: 1440px) {
+  .team-slider {
+    width: 70%;
+  }
+
+  .swiper-slide {
+    margin-right: 150px;
+  }
+
+  .team-member {
+    max-width: 300px;
+  }
+
+  .image-placeholder {
+    width: 280px;
+    height: 300px;
+  }
+
+  .team-member h3 {
+    font-size: 1.2em;
+  }
+
+  .team-member p {
+    font-size: 1em;
+  }
 }
