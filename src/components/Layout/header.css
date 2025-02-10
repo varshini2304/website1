@@ -28,7 +28,7 @@
 }
 
 .navbar .logo-img {
-  margin-left: 35px;
+  margin-left: 25px;
   width: 95%;
   height: 120px;
 }
@@ -235,7 +235,7 @@
   }
 
   .menu a {
-    font-size: 1.6em; /* Adjust as needed */
+    font-size: 2em; /* Adjust as needed */
     margin: 0 25px; /* Adjust as needed */
   }
 }

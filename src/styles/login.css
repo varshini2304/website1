@@ -265,8 +265,7 @@
     background-color: #fff;
     color: #333;
     position: absolute;
-    top: 280px;      /*Consider making this dynamic if needed */
-    /* Remove or adjust top, flex-direction if you don't want them absolutely positioned */
+    top: 280px;
     border: none;
     border-radius: 8px;
     padding: 10px 45px;
@@ -278,10 +277,8 @@
     box-sizing: border-box; /* Added box-sizing */
 }
 
-/*  Styles for the button text content (sign in/sign up) */
 .toggle-right button span, .toggle-left button span {
     display: block; /* Make the span a block element for better layout control */
-    /* Add any other styling for the text here */
 }
 
 .toggle-right button:hover, .toggle-left button:hover {
@@ -290,12 +287,10 @@
 }
 
 
-/* Media query adjustments for the toggle buttons */
 @media (max-width: 768px) {
     .toggle-right button, .toggle-left button {
         font-size: 12px; /* Smaller font size on smaller screens */
         padding: 8px 30px; /* Smaller padding */
-        /* You might need to adjust the top position or other styles for smaller screens */
         top: auto; /* Example: remove absolute positioning and let it flow naturally */
         margin-top: 20px; /* Example: add some margin */
         position: relative; /* Example: to make it relative to its parent */

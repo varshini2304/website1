@@ -29,8 +29,8 @@ const ParticleBackground = () => {
             shape: { type: "circle" },
             opacity: { value: 0.5 },
             size: { value: 2, random: true },
-            move: { enable: false, speed: 2 },
-            line_linked: { enable: false, distance: 150, color: "#ffc107" },
+            move: { enable: true, speed: 2 },
+            line_linked: { enable: true, distance: 150, color: "#ffc107" },
           },
           interactivity: {
             events: { onhover: { enable: false, mode: "repulse" } },

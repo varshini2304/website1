@@ -13,18 +13,20 @@
 
 .left-con {
   flex: 1;
-  margin-top: 80px;
-  margin-left: -400px;
+  margin-top: 7%;
+  margin-left: -540px;
   position: relative;
 }
 
 .right-con {
   margin-left: 68.9%;
-  margin-top: -9.2%;
+  margin-top: -9%;
   margin-bottom: 250px;
-  padding: 75px;
+  padding: 71.8px;
+  border-top-left-radius: 185px;
+  border-bottom-left-radius: 185px;
   width: 31%;
-  height: 100%;
+  height: 87%;
   background-color: #ffc107b7;
 }
 
@@ -38,6 +40,7 @@
   font-size: 3.5em;
   background: linear-gradient(#dbcc99, #ffc107);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 20px;
   font-weight: bold;

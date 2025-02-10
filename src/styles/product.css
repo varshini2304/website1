@@ -12,7 +12,7 @@
 .product-container {
   width: 100vw;
   height: 450px;
-  top: 40px;
+  top: -40px;
   border-radius: 25px;
   background: transparent;
   position: relative;
@@ -86,26 +86,27 @@
   transition: transform 1s ease-in-out, opacity 1s ease-in-out, z-index 0.2s;
   position: absolute;
   width: 430px;
+  right: 39%;
   height: 300px;
 }
 
 .image-container img {
-  width: 90%;
+  width: 100%;
   height: 90%;
   gap: 10px;
   margin-left: 40px;
-  margin-right: 50px;
+  margin-right: 20px;
   border-radius: 20px;
 }
 
 .layer {
   position: absolute;
   top: -15px;
-  width: 97%;
+  width: 107.5%;
   left: 25px;
   height: 100%;
   background: linear-gradient(rgba(0, 0, 0, 0.6), #d59835);
-  border-radius: 5px;
+  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -167,11 +168,11 @@
 }
 
 .left-btn {
-  left: -30px;
+  left: 0.1%;
 }
 
 .right-btn {
-  right: -55px;
+  right: 0.1%;
 }
 
 .slider-btn {
@@ -363,4 +364,10 @@
   .modal-content {
     width: 90%;
   }
+
+  .image-container {
+  right: 22%;
+  width: 85%;
+  height: 300px;
+}
 }

@@ -23,8 +23,7 @@ const LoginModal = ({ showLoginModal, handleCloseModal, toggleForm, isSignUp }) 
             localStorage.setItem('token', token);
 
             handleCloseModal();
-            // Redirect or update UI as needed
-            window.location.href = "/profile"; // Example: Redirect to /profile
+            window.location.href = "/profile"; 
 
         } catch (error) {
             console.error("Login Error:", error);
@@ -67,7 +66,6 @@ const LoginModal = ({ showLoginModal, handleCloseModal, toggleForm, isSignUp }) 
             <div className="modal-content">
                 <span className="close" onClick={handleCloseModal}>&#x2715;</span>
                 <div className={`container ${isSignUp ? 'active' : ''}`} id="container">
-                    {/* Sign In Form */}
                     {!isSignUp && (
                         <div className="form-container sign-in active">
                             <form onSubmit={handleLogin}>
@@ -79,7 +77,6 @@ const LoginModal = ({ showLoginModal, handleCloseModal, toggleForm, isSignUp }) 
                                     <a href="#"><FontAwesomeIcon icon={faFacebookF} /></a>
                                     <a href="#"><FontAwesomeIcon icon={faLinkedinIn} /></a>
                                     <a href="#"><FontAwesomeIcon icon={faGithub} /></a>
-                                    {/* ... other social icons */}
                                 </div>
                                 <span>or use your email password</span>
                                 <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" required />
@@ -90,7 +87,6 @@ const LoginModal = ({ showLoginModal, handleCloseModal, toggleForm, isSignUp }) 
                         </div>
                     )}
 
-                    {/* Sign Up Form */}
                     <div className={`form-container sign-up ${isSignUp ? 'active' : ''}`}>
                         <form onSubmit={handleSignUp}>
                             <h1>Sign Up</h1>
@@ -103,7 +99,6 @@ const LoginModal = ({ showLoginModal, handleCloseModal, toggleForm, isSignUp }) 
                         </form>
                     </div>
 
-                    {/* Toggle Container */}
                     <div className="toggle-container">
                         <div className="toggle">
                             <div className="toggle-panel toggle-left">
