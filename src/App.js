@@ -9,9 +9,9 @@ import Footer from "./components/Layout/Footer.jsx";
 import LoginModal from "./components/Modals/LoginModal.jsx";
 import Popup from "./components/Modals/ProductPopup.jsx";
 import Loading from "./components/Layout/Loading/Loading.jsx";
-import product1 from "./assets/images/product1.png";
-import product2 from "./assets/images/product2.png";
-import product3 from "./assets/images/product3.png";
+import product1 from "./assets/images/product1.jpg";
+import product2 from "./assets/images/product2.jpg";
+import product3 from "./assets/images/product3.jpg";
 import "./styles/style.css";
 
 

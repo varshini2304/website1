@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import product1 from '../../assets/images/product1.png';
-import product2 from '../../assets/images/product2.png';
-import product3 from '../../assets/images/product3.png';
+import product1 from '../../assets/images/product1.jpg';
+import product2 from '../../assets/images/product2.jpg';
+import product3 from '../../assets/images/product3.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import ProductPopup from '../../components/Modals/ProductPopup.jsx';

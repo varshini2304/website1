@@ -10,7 +10,7 @@
 
 /* Navbar */
 .navbar {
-  position: fixed;
+  position: absolute;
   display: flex; /* Use flexbox for alignment */
   justify-content: space-between; /* Space logo and menu */
   align-items: center; /* Vertically center items */

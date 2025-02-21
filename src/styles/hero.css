@@ -2,7 +2,7 @@
 .hero-content h1 {
   font-size: 4.5rem;
   margin-bottom: 20px;
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Inria Sans";
   margin-top: 10%;
   color: #dbcc99;
   margin-left: 50px;
@@ -10,7 +10,7 @@
 }
 
 .hero-content h2 {
-  font-family: "Times New Roman", Times, serif;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   color: #dbcc99;
   margin-left: 55px;
   line-height: 1.2;
@@ -23,13 +23,13 @@
   margin-bottom: 20px;
   margin-top: 10px;
   margin-left: 50px;
-  font-family: "Times New Roman", Times, serif;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   opacity: 0;
   animation: fadeIn 3s 3s ease-in-out forwards;
 }
 
 .hero-content span {
-  font-size: 1em;
+  font-size: 1.5em;
   letter-spacing: 2px;
   border-right: 5px solid;
   display: inline-block;
