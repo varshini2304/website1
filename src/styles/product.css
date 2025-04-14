@@ -57,13 +57,13 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-  width: 100%;
+  width: 90%;
   height: 400px;
   gap: 10px;
 }
 
 .slider-images img {
-  width: 250px;
+  width: 200px;
   height: 300px;
   border-radius: 20px;
   transition: transform 1s ease-in-out;

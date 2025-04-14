@@ -46,14 +46,14 @@
 
 .coinb {
   position: absolute;
-  bottom: 0;
+  bottom: 10%;
   left: 50%;
   width: 376.65px;
   height: 368.56px;
   background-color: black;
   background-image: url("../assets/images/logo.svg");
   background-size: 620px;
-  background-position: top;
+  background-position: center;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -105,7 +105,7 @@
   background-color: black;
   background-image: url("../assets/images/logo.svg");
   background-size: 620px;
-  background-position: top;
+  background-position: center;
   border-radius: 50%;
   position: absolute;
   animation: slideFromCenter 4s ease-out forwards;
