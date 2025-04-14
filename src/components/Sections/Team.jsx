@@ -11,10 +11,10 @@ import "swiper/css/pagination";
 const CreativeTeam = () => {
   const teamMembers = [
     { name: "Varshini", role: "Frontend Lead" },
-    { name: "Apoorva", role: "Backend Lead" },
+    { name: "Shashank", role: "Backend Lead" },
     { name: "Pooja", role: "UI/UX Lead" },
-    { name: "Harshitha", role: "Blockchain Lead" },
-    { name: "Madhu", role: "AI Lead" },
+    { name: "sahil", role: "Blockchain Lead" },
+    { name: "anusha", role: "AI Lead" },
     { name: "Sairaj", role: "Product Lead" },
   ];
 

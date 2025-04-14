@@ -7,10 +7,10 @@ const Home = () => (
   <section id="home" className="home-section">
   <div className="hero-section">
     <div className="hero-content">
-      <h1>WELCOME TO <br /> <span>NEXETHER</span></h1>
+      <h1>WELCOME TO <br /> <span>AVIONICS</span></h1>
       <h2>Empowering the Future of Blockchain</h2>
       <p>
-        At NexEther, innovation meets decentralization. We are dedicated to creating blockchain solutions that push boundaries, empower users, and deliver transparency.
+        At Avionics, innovation meets decentralization. We are dedicated to creating blockchain solutions that push boundaries, empower users, and deliver transparency.
       </p>
     </div>
   </div>

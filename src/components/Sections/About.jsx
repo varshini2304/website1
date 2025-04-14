@@ -5,12 +5,12 @@ const About = () => {
   const aboutData = [
     {
       title: "ABOUT US",
-      content: "At NexEther, we’re revolutionizing industries with blockchain—bringing security, transparency, and control to finance, supply chains, and digital identities. No middlemen, just scalable solutions for real-world problems. Let’s shape a smarter, decentralized future together!",
+      content: "At Avionics, we’re revolutionizing industries with blockchain—bringing security, transparency, and control to finance, supply chains, and digital identities. No middlemen, just scalable solutions for real-world problems. Let’s shape a smarter, decentralized future together!",
       image: "image4.jpg",
     },
     {
       title: "CORE VALUES",
-      content: "At NexEther, innovation drives us, with every team member contributing to creative solutions. Trust and transparency guide our work, while collaboration fuels our success. We’re committed to excellence, always striving for the highest standards.",
+      content: "At Avionics, innovation drives us, with every team member contributing to creative solutions. Trust and transparency guide our work, while collaboration fuels our success. We’re committed to excellence, always striving for the highest standards.",
       image: "image1.jpg",
     },
     {

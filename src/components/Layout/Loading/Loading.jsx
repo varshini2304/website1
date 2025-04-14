@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from "react";
 import "../../../styles/style.css";
 import "../../../styles/loading.css";
 
@@ -17,12 +17,12 @@ const Loading = () => {
     };
 
     if (coin) {
-      coin.addEventListener('animationend', handleAnimationEnd);
+      coin.addEventListener("animationend", handleAnimationEnd);
     }
 
     return () => {
       if (coin) {
-        coin.removeEventListener('animationend', handleAnimationEnd);
+        coin.removeEventListener("animationend", handleAnimationEnd);
       }
     };
   }, []);
@@ -34,7 +34,7 @@ const Loading = () => {
         <div className="coinb" ref={coinRef}></div>
         <div className="logob"></div>
         <div className="title">
-          <h1 className="slide-text">NexEther</h1>
+          <h1 className="slide-text">Avionics</h1>
         </div>
       </div>
     </section>
